@@ -1,0 +1,169 @@
+model,seed,task,modality,auc,n
+Mesorch + null-twin negatives,42,b_vs_c,ALL,0.7292495867768595,1100
+Mesorch + null-twin negatives,42,b_vs_c,ct,0.5465927977839335,190
+Mesorch + null-twin negatives,42,b_vs_c,endoscopy,0.6865,200
+Mesorch + null-twin negatives,42,b_vs_c,histopathology,0.9706632653061225,168
+Mesorch + null-twin negatives,42,b_vs_c,mri,0.7998718154141965,158
+Mesorch + null-twin negatives,42,b_vs_c,ultrasound,0.8528395061728395,180
+Mesorch + null-twin negatives,42,b_vs_c,xray,0.7257785467128027,204
+Mesorch + null-twin negatives,42,b_vs_d,ALL,0.7824529628027682,544
+Mesorch + null-twin negatives,42,b_vs_d,ct,0.5350617283950617,180
+Mesorch + null-twin negatives,42,b_vs_d,endoscopy,0.9829629629629629,180
+Mesorch + null-twin negatives,42,b_vs_d,histopathology,,0
+Mesorch + null-twin negatives,42,b_vs_d,mri,0.9341831425598335,124
+Mesorch + null-twin negatives,42,b_vs_d,ultrasound,0.94,60
+Mesorch + null-twin negatives,42,b_vs_d,xray,,0
+Mesorch + null-twin negatives,42,a_vs_b,ALL,0.6986105931174927,1644
+Mesorch + null-twin negatives,42,a_vs_b,ct,0.5387582176771366,370
+Mesorch + null-twin negatives,42,a_vs_b,endoscopy,0.6271468144044321,380
+Mesorch + null-twin negatives,42,a_vs_b,histopathology,0.5992063492063492,168
+Mesorch + null-twin negatives,42,a_vs_b,mri,0.8229465318645943,282
+Mesorch + null-twin negatives,42,a_vs_b,ultrasound,0.8804166666666666,240
+Mesorch + null-twin negatives,42,a_vs_b,xray,0.8829296424452133,204
+Mesorch + null-twin negatives,43,b_vs_c,ALL,0.7244198347107438,1100
+Mesorch + null-twin negatives,43,b_vs_c,ct,0.5407202216066482,190
+Mesorch + null-twin negatives,43,b_vs_c,endoscopy,0.6766,200
+Mesorch + null-twin negatives,43,b_vs_c,histopathology,0.9774659863945578,168
+Mesorch + null-twin negatives,43,b_vs_c,mri,0.783528280724243,158
+Mesorch + null-twin negatives,43,b_vs_c,ultrasound,0.8335802469135802,180
+Mesorch + null-twin negatives,43,b_vs_c,xray,0.7106881968473664,204
+Mesorch + null-twin negatives,43,b_vs_d,ALL,0.783372080449827,544
+Mesorch + null-twin negatives,43,b_vs_d,ct,0.5344444444444445,180
+Mesorch + null-twin negatives,43,b_vs_d,endoscopy,0.9933333333333333,180
+Mesorch + null-twin negatives,43,b_vs_d,histopathology,,0
+Mesorch + null-twin negatives,43,b_vs_d,mri,0.9339229968782519,124
+Mesorch + null-twin negatives,43,b_vs_d,ultrasound,0.9611111111111111,60
+Mesorch + null-twin negatives,43,b_vs_d,xray,,0
+Mesorch + null-twin negatives,43,a_vs_b,ALL,0.7033672545154244,1644
+Mesorch + null-twin negatives,43,a_vs_b,ct,0.5343170197224252,370
+Mesorch + null-twin negatives,43,a_vs_b,endoscopy,0.6679778393351801,380
+Mesorch + null-twin negatives,43,a_vs_b,histopathology,0.5717120181405896,168
+Mesorch + null-twin negatives,43,a_vs_b,mri,0.833811176500176,282
+Mesorch + null-twin negatives,43,a_vs_b,ultrasound,0.8720833333333333,240
+Mesorch + null-twin negatives,43,a_vs_b,xray,0.9032103037293349,204
+Mesorch + null-twin negatives,44,b_vs_c,ALL,0.7189752066115702,1100
+Mesorch + null-twin negatives,44,b_vs_c,ct,0.5492520775623269,190
+Mesorch + null-twin negatives,44,b_vs_c,endoscopy,0.6964,200
+Mesorch + null-twin negatives,44,b_vs_c,histopathology,0.9778911564625851,168
+Mesorch + null-twin negatives,44,b_vs_c,mri,0.7960262778400897,158
+Mesorch + null-twin negatives,44,b_vs_c,ultrasound,0.8093827160493827,180
+Mesorch + null-twin negatives,44,b_vs_c,xray,0.6621491733948481,204
+Mesorch + null-twin negatives,44,b_vs_d,ALL,0.7911980968858131,544
+Mesorch + null-twin negatives,44,b_vs_d,ct,0.5435802469135802,180
+Mesorch + null-twin negatives,44,b_vs_d,endoscopy,0.9864197530864197,180
+Mesorch + null-twin negatives,44,b_vs_d,histopathology,,0
+Mesorch + null-twin negatives,44,b_vs_d,mri,0.9357440166493236,124
+Mesorch + null-twin negatives,44,b_vs_d,ultrasound,0.9622222222222222,60
+Mesorch + null-twin negatives,44,b_vs_d,xray,,0
+Mesorch + null-twin negatives,44,a_vs_b,ALL,0.721643549351472,1644
+Mesorch + null-twin negatives,44,a_vs_b,ct,0.5324762600438276,370
+Mesorch + null-twin negatives,44,a_vs_b,endoscopy,0.6437396121883656,380
+Mesorch + null-twin negatives,44,a_vs_b,histopathology,0.7006802721088435,168
+Mesorch + null-twin negatives,44,a_vs_b,mri,0.8474422815753735,282
+Mesorch + null-twin negatives,44,a_vs_b,ultrasound,0.8855555555555555,240
+Mesorch + null-twin negatives,44,a_vs_b,xray,0.9245482506728181,204
+oracle mask channel,42,b_vs_c,ALL,0.7967338842975207,1100
+oracle mask channel,42,b_vs_c,ct,0.5480332409972299,190
+oracle mask channel,42,b_vs_c,endoscopy,0.7507,200
+oracle mask channel,42,b_vs_c,histopathology,0.9689625850340136,168
+oracle mask channel,42,b_vs_c,mri,0.8272712706297067,158
+oracle mask channel,42,b_vs_c,ultrasound,0.8755555555555555,180
+oracle mask channel,42,b_vs_c,xray,0.7525951557093425,204
+oracle mask channel,42,b_vs_d,ALL,0.9310526600346021,544
+oracle mask channel,42,b_vs_d,ct,0.8196296296296296,180
+oracle mask channel,42,b_vs_d,endoscopy,0.9917283950617284,180
+oracle mask channel,42,b_vs_d,histopathology,,0
+oracle mask channel,42,b_vs_d,mri,0.9255983350676379,124
+oracle mask channel,42,b_vs_d,ultrasound,0.9277777777777778,60
+oracle mask channel,42,b_vs_d,xray,,0
+oracle mask channel,42,a_vs_b,ALL,0.6759698320516692,1644
+oracle mask channel,42,a_vs_b,ct,0.5417677136596055,370
+oracle mask channel,42,a_vs_b,endoscopy,0.621163434903047,380
+oracle mask channel,42,a_vs_b,histopathology,0.7080498866213152,168
+oracle mask channel,42,a_vs_b,mri,0.7795382526029878,282
+oracle mask channel,42,a_vs_b,ultrasound,0.849375,240
+oracle mask channel,42,a_vs_b,xray,0.7927720107650903,204
+oracle mask channel,43,b_vs_c,ALL,0.7925553719008265,1100
+oracle mask channel,43,b_vs_c,ct,0.5146814404432133,190
+oracle mask channel,43,b_vs_c,endoscopy,0.7606,200
+oracle mask channel,43,b_vs_c,histopathology,0.9709467120181405,168
+oracle mask channel,43,b_vs_c,mri,0.8424931901938791,158
+oracle mask channel,43,b_vs_c,ultrasound,0.8680246913580247,180
+oracle mask channel,43,b_vs_c,xray,0.7287581699346405,204
+oracle mask channel,43,b_vs_d,ALL,0.9443933823529411,544
+oracle mask channel,43,b_vs_d,ct,0.832962962962963,180
+oracle mask channel,43,b_vs_d,endoscopy,0.997037037037037,180
+oracle mask channel,43,b_vs_d,histopathology,,0
+oracle mask channel,43,b_vs_d,mri,0.9523933402705516,124
+oracle mask channel,43,b_vs_d,ultrasound,0.9277777777777778,60
+oracle mask channel,43,b_vs_d,xray,,0
+oracle mask channel,43,a_vs_b,ALL,0.6697820282854116,1644
+oracle mask channel,43,a_vs_b,ct,0.5319211102994886,370
+oracle mask channel,43,a_vs_b,endoscopy,0.6360110803324099,380
+oracle mask channel,43,a_vs_b,histopathology,0.6081349206349206,168
+oracle mask channel,43,a_vs_b,mri,0.7776771792163372,282
+oracle mask channel,43,a_vs_b,ultrasound,0.8196527777777778,240
+oracle mask channel,43,a_vs_b,xray,0.7588427527873894,204
+oracle mask channel,44,b_vs_c,ALL,0.7921157024793388,1100
+oracle mask channel,44,b_vs_c,ct,0.5385041551246538,190
+oracle mask channel,44,b_vs_c,endoscopy,0.7533,200
+oracle mask channel,44,b_vs_c,histopathology,0.9655612244897959,168
+oracle mask channel,44,b_vs_c,mri,0.8585162634193239,158
+oracle mask channel,44,b_vs_c,ultrasound,0.8492592592592593,180
+oracle mask channel,44,b_vs_c,xray,0.7261630142252979,204
+oracle mask channel,44,b_vs_d,ALL,0.933674848615917,544
+oracle mask channel,44,b_vs_d,ct,0.8304938271604938,180
+oracle mask channel,44,b_vs_d,endoscopy,0.9888888888888889,180
+oracle mask channel,44,b_vs_d,histopathology,,0
+oracle mask channel,44,b_vs_d,mri,0.9281997918834547,124
+oracle mask channel,44,b_vs_d,ultrasound,0.9255555555555556,60
+oracle mask channel,44,b_vs_d,xray,,0
+oracle mask channel,44,a_vs_b,ALL,0.7037254101029475,1644
+oracle mask channel,44,a_vs_b,ct,0.5489846603360117,370
+oracle mask channel,44,a_vs_b,endoscopy,0.6620498614958449,380
+oracle mask channel,44,a_vs_b,histopathology,0.7971938775510204,168
+oracle mask channel,44,a_vs_b,mri,0.8160555304059152,282
+oracle mask channel,44,a_vs_b,ultrasound,0.890625,240
+oracle mask channel,44,a_vs_b,xray,0.792964244521338,204
+zero mask channel (control),42,b_vs_c,ALL,0.7259338842975207,1100
+zero mask channel (control),42,b_vs_c,ct,0.5397229916897507,190
+zero mask channel (control),42,b_vs_c,endoscopy,0.6673,200
+zero mask channel (control),42,b_vs_c,histopathology,0.9800170068027211,168
+zero mask channel (control),42,b_vs_c,mri,0.8000320461464508,158
+zero mask channel (control),42,b_vs_c,ultrasound,0.8393827160493827,180
+zero mask channel (control),42,b_vs_c,xray,0.6968473663975394,204
+zero mask channel (control),42,b_vs_d,ALL,0.7839262543252595,544
+zero mask channel (control),42,b_vs_d,ct,0.5359259259259259,180
+zero mask channel (control),42,b_vs_d,endoscopy,0.9883950617283951,180
+zero mask channel (control),42,b_vs_d,histopathology,,0
+zero mask channel (control),42,b_vs_d,mri,0.9344432882414152,124
+zero mask channel (control),42,b_vs_d,ultrasound,0.9588888888888889,60
+zero mask channel (control),42,b_vs_d,xray,,0
+zero mask channel (control),42,a_vs_b,ALL,0.7096556970418124,1644
+zero mask channel (control),42,a_vs_b,ct,0.5344046749452155,370
+zero mask channel (control),42,a_vs_b,endoscopy,0.6876731301939059,380
+zero mask channel (control),42,a_vs_b,histopathology,0.5418083900226758,168
+zero mask channel (control),42,a_vs_b,mri,0.8477943765404155,282
+zero mask channel (control),42,a_vs_b,ultrasound,0.8566666666666667,240
+zero mask channel (control),42,a_vs_b,xray,0.8900422914263745,204
+"frozen, max inside true mask",42,b_vs_c,ALL,0.7227801652892561,1100
+"frozen, max inside true mask",42,b_vs_c,ct,0.5340720221606648,190
+"frozen, max inside true mask",42,b_vs_c,endoscopy,0.6901,200
+"frozen, max inside true mask",42,b_vs_c,histopathology,0.9706632653061225,168
+"frozen, max inside true mask",42,b_vs_c,mri,0.8006729690754687,158
+"frozen, max inside true mask",42,b_vs_c,ultrasound,0.8622222222222222,180
+"frozen, max inside true mask",42,b_vs_c,xray,0.722318339100346,204
+"frozen, max inside true mask",42,b_vs_d,ALL,0.7367133434256056,544
+"frozen, max inside true mask",42,b_vs_d,ct,0.48012345679012347,180
+"frozen, max inside true mask",42,b_vs_d,endoscopy,0.9845679012345679,180
+"frozen, max inside true mask",42,b_vs_d,histopathology,,0
+"frozen, max inside true mask",42,b_vs_d,mri,0.9128511966701353,124
+"frozen, max inside true mask",42,b_vs_d,ultrasound,0.94,60
+"frozen, max inside true mask",42,b_vs_d,xray,,0
+"frozen, max inside true mask",42,a_vs_b,ALL,0.8575169753908631,1644
+"frozen, max inside true mask",42,a_vs_b,ct,0.5757487216946676,370
+"frozen, max inside true mask",42,a_vs_b,endoscopy,0.891578947368421,380
+"frozen, max inside true mask",42,a_vs_b,histopathology,0.9649943310657596,168
+"frozen, max inside true mask",42,a_vs_b,mri,0.9322468688697751,282
+"frozen, max inside true mask",42,a_vs_b,ultrasound,0.9697916666666667,240
+"frozen, max inside true mask",42,a_vs_b,xray,0.9587658592848904,204

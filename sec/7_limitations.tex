@@ -1,0 +1,31 @@
+\section{Limitations}
+\label{sec:limitations}
+
+\textbf{Healthy sources.} Only CT injections are placed in tissue verified healthy by four readers; the other modalities' injection sources carry image-level labels at best, so an injected lesion may sit beside unannotated pathology.
+\textbf{Image format.} All images are 8-bit 2D renders: there are no Hounsfield units, k-space or volumes, and split units hold 1.01--1.36 lineages, % src: docs/council/context_dossier.md (A, No 3D)
+so inter-slice consistency cannot be exploited.
+\textbf{Mask-shape shortcut.} Removal masks are traced lesions and injection masks are synthetic, and geometry alone separates the families (up to 0.950 held out); % src: work/e0/out_local/e0x/e0d/e0d_shape.csv
+we report families separately but do not remove the cue.
+\textbf{Removal quality.} Removal is attempted, not guaranteed; per-lineage efficacy is published, and outside CT the contours come from a single annotator.
+\textbf{Generators.} Two generators are used for training and one is held out; the twin matches the autoencoder, not the sampler.
+\textbf{MedForge study.} It covers brain MRI and fundus on 186 untouched scans for the Reasoner; % src: paper/data/medforge_reasoner_hardlabel.csv
+chest X-ray is not evaluated because its sources require credentialed access, and 8.3\% of the sampled brain-MRI scans duplicate our MRI sources. % src: docs/council/round2/experiments/README.md (Step 9, job A)
+\textbf{MedForge degradation control.} The JPEG version is a much milder change than the autoencoder round trip, so we cannot yet say whether non-neural processing of the same strength would also be called fake (\TODO{E3b}).
+\textbf{Reference.} Every reference-based row compares against the LaMa null twin, not a pristine original, and assumes pixel registration.
+\textbf{Test reuse.} The paired model family was revised after its test scores had been read, so its test AUCs are post-selection; its $\lambda$ rule is calibration-only but not blind, and the invariance baseline rests on one seed (\TODO{E3d}).
+\textbf{No reader study.} We have not measured whether radiologists can see these edits or whether an edit changes a diagnosis.
+\textbf{CT.} Single-image CT detection remains near chance (best 0.586), % src: paper/data/main_benchmark_test.csv (derived)
+and no detector we test reaches a 10\% worst-case FPR on CT at the pooled threshold. % src: docs/council/round3/experiments/local/r3_operating_points.csv (worst_fpr, ct: minimum 0.205)
+
+\section*{Ethics statement}
+\textbf{Dual use.} A forgery corpus could help train better forgers. Every edit is produced by public, off-the-shelf generators, so \dataset adds no attack capability that is not already available; what it adds is the null twin, which serves only measurement and defence.
+\textbf{Licences.} Sources are public, de-identified research datasets. Each derived image is released under terms compatible with its source, listed per source in the supplementary licence table; sources whose redistribution terms are unclear are released as generation scripts and manifests rather than images. \TODO{complete the licence table; resolve the repackaged Kaggle sources}
+MedForge-90K is used under its C-UDA licence: no MedForge image, and no image derived from one, is shown or released.
+\textbf{Privacy.} CT headers are reduced to a whitelist of non-identifying fields with salted identifiers, and no DICOM header ships. No new human-subject data was collected.
+\textbf{Release.} Access is gated behind a research-use agreement that forbids clinical deception and re-identification, with a datasheet~\cite{gebru2021datasheets} describing composition, intended uses and known shortcuts.
+
+\section{Conclusion}
+A medical forgery detector that is scored against untouched images is largely scored on whether it recognises the generator's autoencoder, and MedForge's own detector draws lesion-sized boxes on images nobody edited.
+\dataset makes that visible by giving every edit a twin that went through the same autoencoder unedited, and its protocol reads one calibration operating point against every kind of unedited image, per modality.
+Measured this way, single-image detection is far from solved, reference-based AUC is mostly per-modality arithmetic, and no detector we test has an acceptable false-alarm rate on every negative type and modality.
+The open problems are concrete: judging small CT injections, finding CT removals, and a verifier whose operating point survives benign neural processing on CT.

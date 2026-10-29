@@ -1,0 +1,83 @@
+\section{Benchmark protocol}
+\label{sec:protocol}
+
+\paragraph{Tasks.}
+A task compares two variants of the same lineages and is named after their letters.
+\textbf{B-vs-C} asks a detector to tell an injection from its own null twin, and \textbf{B-vs-D} does the same for removal; these are the main tasks.
+\textbf{A-vs-CM} tests copy-move against the source, with no generator involved.
+\textbf{A-vs-B} is the twin false-alarm control: nothing was edited, so 0.5 is the ideal AUC and anything higher means the detector fires on an unedited image.
+\textbf{A-vs-C}, the conventional task, is reported only to compute the fingerprint share.
+SDXL tasks are defined in the same way on the SDXL images.
+A \emph{single-image} detector sees only the candidate.
+A \emph{paired} detector also sees a reference image: the lineage's LaMa twin, shared by both classes of every task so that the reference itself carries no label.
+We call it the \emph{null-twin reference}; it is not a pristine archived original, and rescoring with the source as reference is pending (\TODO{E3a: pristine-reference rescoring}).
+The image score is the maximum of the predicted map.
+We report ROC-AUC, and every interval we quote is a 95\% interval from 2,000 bootstrap resamples of split units; % src: docs/council/round2/experiments/README.md (header: 2,000 split-unit bootstraps)
+paired differences between models use the same resamples for both.
+
+\paragraph{Report by edit family.}
+\label{sec:family}
+Injection and removal are scored separately and never pooled, because their masks differ.
+Removal masks are traced lesions and injection masks are synthetic, so a logistic classifier on seven geometry features of the mask (area, width, height, aspect ratio, perimeter, circularity, fill), never reading a pixel, separates removal from injection lineages at a held-out test AUC of 0.743 pooled, % src: work/e0/out_local/e0x/e0d/e0d_shape.csv
+0.950 in endoscopy, 0.918 in ultrasound, 0.880 in CT and 0.688 in MRI. % src: work/e0/out_local/e0x/e0d/e0d_shape.csv
+Matching mask areas does not remove the gap (endoscopy 0.959). % src: work/e0/out_local/e0x/e0d/e0d_shape.csv (C4 area_overlap)
+A pooled metric, or any comparison of removal against injection difficulty, therefore partly measures the mask distribution, and per-family localisation must be read beside this baseline.
+
+\paragraph{Fingerprint share.}
+We define the fingerprint share of a detector as
+\begin{equation}
+\mathrm{FS} = \frac{\mathrm{AUC}_{\text{A-vs-B}} - 0.5}{\mathrm{AUC}_{\text{A-vs-C}} - 0.5},
+\label{eq:fs}
+\end{equation}
+the fraction of its margin above chance on the conventional task that it also achieves on an image with no edit.
+$\mathrm{FS}\approx1$ means the reported score is mostly the autoencoder; $\mathrm{FS}\approx0$ means the detector ignores it.
+FS needs only twins of the untouched images, so it can be computed on corpora without them, including MedForge (\cref{sec:confound}).
+
+\paragraph{Null-penalised localisation.}
+Pixel F1 computed on forgeries alone rewards a detector that marks every region the autoencoder touched.
+We therefore also charge the twin's predicted pixels as false positives,
+\begin{equation}
+\mathrm{F1}^{\text{np}} = \frac{2\,\mathrm{TP}_X}{2\,\mathrm{TP}_X + \mathrm{FP}_X + \mathrm{FP}_B + \mathrm{FN}_X},
+\label{eq:np}
+\end{equation}
+per image $X$ and its twin $B$, averaged over the positives of one edit family.
+Ground truth is the mask core (alpha $\geq$ 0.5), with the feather counted as background.
+The binarisation threshold $t^\ast$ is chosen per detector on calibration, and the default 0.5 is shown for comparison.
+Localisation is void for any model that receives the reference or the mask as input, since either reveals where the edit is.
+
+\paragraph{Operating points.}
+AUC is threshold-free, so it hides the failure that matters in deployment: an alarm rate on unedited images.
+Each detector gets one threshold, the 95\%-TPR point on SD injections of the calibration split, % src: docs/council/round3/experiments/local/R3_STEP1_REPORT.md (Conventions: np.quantile(score, 0.05) on calibration C_sd)
+and at that threshold we report the false-positive rate (FPR) separately for every negative type: SD twins on calibration and on test, so that same-generator drift is visible; untouched sources; each benign operation below, flagged when it was held out of the detector's training; and SDXL twins.
+SDXL twins are much closer to their sources than SD twins (\cref{sec:dataset}), so their FPR is read against SD twins matched on in-mask MSE, and a transfer gap is the difference between the two.
+We report every rate per modality with CT broken out, the TPR beside it, and the worst FPR over negative types as a summary.
+We recommend choosing among models or hyperparameters by the worst calibration FPR rather than by an AUC; \cref{sec:operating} shows that the two can disagree.
+
+\paragraph{Benign processing.}
+Four whole-image operations are applied to sources: JPEG at quality 90, non-local-means denoising, an SDXL-autoencoder round trip and a VQ-autoencoder round trip. % src: docs/council/context_dossier.md (A, Arms: benign probes)
+They are authentic under the tamper definition (\cref{sec:intro}), so each is a negative type.
+An invariance number, such as AUC(source vs.\ processed source), is never reported without the per-arm score spread and the detection number beside it, because a detector that has stopped discriminating is trivially invariant. % src: Deepfakedoctillnow.pdf p.12-13 (standing rule); docs/council/round3/council_verdict.md (Draft corrections 6)
+
+\paragraph{Splits and selection.}
+Split membership is frozen by hash.
+Checkpoints, thresholds, pooling windows and every go/no-go decision are chosen on calibration only; the test split is opened once per fixed model, and each opening is logged with the decision it fed.
+Models are trained with three seeds where a decision depends on them.
+The seed standard deviation of B-vs-C on calibration is 0.0042, % src: docs/council/round2/experiments/README.md (Step 8)
+so differences below about 0.01 are not resolvable, and CT, with 95 calibration injection lineages, % src: docs/council/round2/experiments/README.md (harness fact 5)
+needs gains of about 0.05. % src: docs/council/round2/council_verdict.md (Power)
+
+\paragraph{Baselines.}
+\emph{Synthetic-image detectors:} AEROBLADE~\cite{ricker2024aeroblade}, training-free, and NPR~\cite{tan2024npr} and UniFD~\cite{ojha2023unifd}, fitted on A-vs-C on our training split as in their papers.
+\emph{Localisation models, zero-shot:} published checkpoints of TruFor, Mesorch, IML-ViT, MVSS-Net and PSCC-Net, run through IMDL-BenCo~\cite{ma2024imdlbenco}.
+\emph{Standard:} the same models fine-tuned on A-vs-C for 24,000 samples. % src: docs/council/context_dossier.md (B, E0-E11)
+\emph{Mesorch + null-twin negatives:} Mesorch trained on B-vs-C, B-vs-D and A-vs-CM, never on A-vs-C, so twins are its negatives.
+\emph{Mesorch + null-twin, distilled:} the same, distilled from the paired model.
+\emph{Subtraction:} zero parameters; the channel-mean absolute difference between candidate and reference, box-filtered over 9$\times$9 pixels, maximised over the image, with the window chosen on calibration among eight variants. % src: work/e0/out_local/e0x/e0a/E0A_REPORT.md; docs/council/round2/experiments/README.md (Step 3)
+Its \emph{standardised} form replaces the score by its percentile among calibration SD twins of the same modality.
+\emph{Block-wise robust hash:} DCT signatures of 16- and 32-pixel blocks~\cite{venkatesan2000hash,swaminathan2006hash}, thresholded on calibration (\TODO{E3c: robust hash}).
+\emph{Paired (FC-Siam-diff):} Mesorch's trunk applied with shared weights to reference and candidate, with the absolute difference of its eight multi-scale feature maps fed to $1{\times}1$ convolutions, adding 648 parameters to 85.75M. % src: Deepfakedoctillnow.pdf p.4
+This is FC-Siam-diff~\cite{daudt2018fcsiam} on a Mesorch trunk with the null-twin reference, not a new architecture.
+Its control receives the same training rows but discards the reference.
+\emph{Paired + benign negatives} adds JPEG-90 and VQ-autoencoder copies of sources as negatives, so NL-means and the SDXL autoencoder stay out of its training;
+\emph{+ invariance} further penalises, with weight $\lambda$, any change of its output map under those two operations. % src: docs/council/round3/experiments/local/R3_STEP1_REPORT.md (Conventions: TRAIN_BENIGN=jpeg90,vqvae)
+We choose $\lambda\in\{0.03, 0.1, 0.3\}$ by a rule written down before any SDXL score was read: the smallest maximum calibration FPR over SD twins, untouched sources, JPEG, VQ-autoencoder and NL-means, with the SDXL autoencoder and all SDXL images excluded so that they stay held out. % src: docs/council/round3/experiments/local/r3_lambda_preregistration.json (rule, written_utc 2026-10-01T16:16:24Z)

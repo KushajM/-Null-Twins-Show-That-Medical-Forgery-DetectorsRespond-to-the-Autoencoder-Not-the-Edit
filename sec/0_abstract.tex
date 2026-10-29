@@ -1,0 +1,17 @@
+\begin{abstract}
+Medical image forgery detectors are trained and tested on one question: is this scan untouched or edited?
+A generative edit, however, changes a scan in two ways at once.
+It inserts or removes a lesion, and it passes the image through the generator's autoencoder.
+We show that medical forgery detectors, including MedForge's own, respond to the autoencoder processing rather than to the edit.
+MedForge-Reasoner calls 0.5\% of untouched scans fake, % src: paper/data/medforge_reasoner_hardlabel.csv (derived from work/e0/out_local/e2/scores_reasoner.parquet)
+but 92.5\% of the same scans after they are passed, unedited, through Stable Diffusion's autoencoder, % src: paper/data/medforge_reasoner_hardlabel.csv
+and on 22 of 30 normal scans it draws a lesion-sized box around a manipulation that does not exist. % src: docs/council/round3/experiments/local/r3_box_audit_normals.csv; R3_STEP1_REPORT.md (Sec. 1)
+On our data, a fine-tuned Mesorch separates untouched images from forgeries at AUC 0.963, % src: work/e0/out_local/tables/table_main.csv
+but forgeries from unedited images passed through the same autoencoder at only 0.536. % src: work/e0/out_local/tables/table_main.csv
+To make this measurable we release \dataset, a six-modality benchmark of 3,956 source images with local lesion injections and removals. % src: docs/council/context_dossier.md (A)
+Every generative edit comes with a per-pixel lesion mask, a background bit-identical to the source, and an unedited image passed through the generator's autoencoder, over three generators, one of them held out.
+Its protocol scores each detector at a single operating point, fixed on a calibration split, against every kind of unedited image, per modality.
+No detector we test wins everywhere.
+At 95\% recall, fine-tuned single-image detectors flag 93--94\% of unedited autoencoder images, % src: docs/council/round3/experiments/local/r3_operating_points.csv (V0, V1, fpr_cal_SD_null)
+and a zero-parameter comparison against a reference image, despite an AUC of 0.921, flags 44\% of them and 98--99\% of images re-encoded by an autoencoder. % src: docs/council/round3/experiments/local/r3_operating_points.csv (sub_raw: fpr_cal_SD_null, fpr_vqvae, fpr_sdxlvae); work/e0/out_local/e0x/e0a/e0a_deltas.csv
+\end{abstract}

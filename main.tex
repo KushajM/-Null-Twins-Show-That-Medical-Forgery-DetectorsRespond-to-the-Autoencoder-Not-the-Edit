@@ -1,0 +1,54 @@
+% CVPR 2027 submission draft, built on the official CVPR author kit
+% (github.com/cvpr-org/author-kit, main @ 2917585, the CVPR 2026 kit; no 2027 kit exists yet).
+%
+% Every number in the text carries a trailing comment "% src: <file>" naming the result
+% file it was copied from. Paths are relative to the project root (the folder holding docs/ and work/).
+% Numbers marked "derived" were recomputed from score parquets by paper/scripts/derive_numbers.py,
+% whose log (paper/data/derive_numbers.log) shows every cross-check against the original reports.
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%%%%%%%%% PAPER TYPE
+% \usepackage{cvpr}              % camera-ready
+\usepackage[review]{cvpr}        % review (anonymous) version
+% \usepackage[pagenumbers]{cvpr} % arXiv version
+
+\input{preamble}
+\input{macros}
+
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+
+%%%%%%%%% PAPER ID
+\def\paperID{*****} % enter the OpenReview paper ID here
+\def\confName{CVPR}
+\def\confYear{2027}
+
+%%%%%%%%% TITLE
+\title{\dataset: Null Twins Show That Medical Forgery Detectors\\Respond to the Autoencoder, Not the Edit}
+
+%%%%%%%%% AUTHORS (anonymous for review)
+\author{Anonymous CVPR submission\\
+Paper ID \paperID}
+
+\begin{document}
+\maketitle
+\input{fig/teaser}
+\input{sec/0_abstract}
+\input{sec/1_intro}
+\input{sec/2_related}
+\input{sec/3_dataset}
+\input{sec/4_protocol}
+\input{sec/5_results}
+\input{sec/7_limitations}
+{
+    \small
+    \bibliographystyle{ieeenat_fullname}
+    \bibliography{refs}
+}
+
+% Supplementary material (outline): uncomment to compile it after the paper, then split the
+% pages off before submitting, as the author kit recommends.
+% \input{sec/X_suppl}
+
+\end{document}

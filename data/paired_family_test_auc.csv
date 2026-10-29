@@ -1,0 +1,106 @@
+model,task,modality,auc,n
+Paired (FC-Siam-diff),b_vs_c,ALL,0.98395293369861,1618
+Paired (FC-Siam-diff),b_vs_c,ct,0.9268492589304009,242
+Paired (FC-Siam-diff),b_vs_c,endoscopy,0.9886578449905482,276
+Paired (FC-Siam-diff),b_vs_c,histopathology,1.0,278
+Paired (FC-Siam-diff),b_vs_c,mri,1.0,268
+Paired (FC-Siam-diff),b_vs_c,ultrasound,0.9998886166184006,268
+Paired (FC-Siam-diff),b_vs_c,xray,0.9852804538119223,286
+Paired (FC-Siam-diff),b_vs_d,ALL,0.996058616326391,684
+Paired (FC-Siam-diff),b_vs_d,ct,0.991744,250
+Paired (FC-Siam-diff),b_vs_d,endoscopy,1.0,226
+Paired (FC-Siam-diff),b_vs_d,histopathology,,0
+Paired (FC-Siam-diff),b_vs_d,mri,1.0,144
+Paired (FC-Siam-diff),b_vs_d,ultrasound,1.0,64
+Paired (FC-Siam-diff),b_vs_d,xray,,0
+Paired (FC-Siam-diff),a_vs_b,ALL,0.49760039432337383,2302
+Paired (FC-Siam-diff),a_vs_b,ct,0.6053605658007799,492
+Paired (FC-Siam-diff),a_vs_b,endoscopy,0.5637370835383565,502
+Paired (FC-Siam-diff),a_vs_b,histopathology,0.40142849748977794,278
+Paired (FC-Siam-diff),a_vs_b,mri,0.3690027335281365,412
+Paired (FC-Siam-diff),a_vs_b,ultrasound,0.4643634780084192,332
+Paired (FC-Siam-diff),a_vs_b,xray,0.4050564819795589,286
+p2,b_vs_c,ALL,0.9782025757814207,1618
+p2,b_vs_c,ct,0.9519841540878355,242
+p2,b_vs_c,endoscopy,0.9942239025414829,276
+p2,b_vs_c,histopathology,0.9998964856891466,278
+p2,b_vs_c,mri,0.9999443083092002,268
+p2,b_vs_c,ultrasound,0.9999443083092002,268
+p2,b_vs_c,xray,0.9642036285392929,286
+p2,b_vs_d,ALL,0.9943743374029616,684
+p2,b_vs_d,ct,0.99232,250
+p2,b_vs_d,endoscopy,1.0,226
+p2,b_vs_d,histopathology,,0
+p2,b_vs_d,mri,0.9998070987654321,144
+p2,b_vs_d,ultrasound,1.0,64
+p2,b_vs_d,xray,,0
+p2,a_vs_b,ALL,0.593923540214719,2302
+p2,a_vs_b,ct,0.7190990812347148,492
+p2,a_vs_b,endoscopy,0.6595927048777004,502
+p2,a_vs_b,histopathology,0.5886341286682883,278
+p2,a_vs_b,mri,0.5426524648883024,412
+p2,a_vs_b,ultrasound,0.5189432428509217,332
+p2,a_vs_b,xray,0.46745562130177515,286
+p3 lam=0.03,b_vs_c,ALL,0.9816709728777459,1618
+p3 lam=0.03,b_vs_c,ct,0.9336110921385151,242
+p3 lam=0.03,b_vs_c,endoscopy,0.9986347406007141,276
+p3 lam=0.03,b_vs_c,histopathology,1.0,278
+p3 lam=0.03,b_vs_c,mri,0.9997772332368011,268
+p3 lam=0.03,b_vs_c,ultrasound,1.0,268
+p3 lam=0.03,b_vs_c,xray,0.9510978531957552,286
+p3 lam=0.03,b_vs_d,ALL,0.9973068636503539,684
+p3 lam=0.03,b_vs_d,ct,0.995072,250
+p3 lam=0.03,b_vs_d,endoscopy,1.0,226
+p3 lam=0.03,b_vs_d,histopathology,,0
+p3 lam=0.03,b_vs_d,mri,1.0,144
+p3 lam=0.03,b_vs_d,ultrasound,1.0,64
+p3 lam=0.03,b_vs_d,xray,,0
+p3 lam=0.03,a_vs_b,ALL,0.5702022416951678,2302
+p3 lam=0.03,a_vs_b,ct,0.6958407693833036,492
+p3 lam=0.03,a_vs_b,endoscopy,0.5436024825002778,502
+p3 lam=0.03,a_vs_b,histopathology,0.36900263961492674,278
+p3 lam=0.03,a_vs_b,mri,0.48243236874351964,412
+p3 lam=0.03,a_vs_b,ultrasound,0.49444767019886776,332
+p3 lam=0.03,a_vs_b,xray,0.529781407403785,286
+p3 lam=0.1,b_vs_c,ALL,0.9622914950930584,1618
+p3 lam=0.1,b_vs_c,ct,0.7994672495048153,242
+p3 lam=0.1,b_vs_c,endoscopy,0.9885003150598614,276
+p3 lam=0.1,b_vs_c,histopathology,1.0,278
+p3 lam=0.1,b_vs_c,mri,0.9983849409668077,268
+p3 lam=0.1,b_vs_c,ultrasound,0.9990532412564045,268
+p3 lam=0.1,b_vs_c,xray,0.9129297276150423,286
+p3 lam=0.1,b_vs_d,ALL,0.9946222769399131,684
+p3 lam=0.1,b_vs_d,ct,0.987328,250
+p3 lam=0.1,b_vs_d,endoscopy,1.0,226
+p3 lam=0.1,b_vs_d,histopathology,,0
+p3 lam=0.1,b_vs_d,mri,1.0,144
+p3 lam=0.1,b_vs_d,ultrasound,1.0,64
+p3 lam=0.1,b_vs_d,xray,,0
+p3 lam=0.1,a_vs_b,ALL,0.49678442271707224,2302
+p3 lam=0.1,a_vs_b,ct,0.6931555291162668,492
+p3 lam=0.1,a_vs_b,endoscopy,0.4839129537626387,502
+p3 lam=0.1,a_vs_b,histopathology,0.17597432845090835,278
+p3 lam=0.1,a_vs_b,mri,0.5003063436704684,412
+p3 lam=0.1,a_vs_b,ultrasound,0.5057156336188126,332
+p3 lam=0.1,a_vs_b,xray,0.5396351899848403,286
+p3 lam=0.3,b_vs_c,ALL,0.9528404949876315,1618
+p3 lam=0.3,b_vs_c,ct,0.7685267399767776,242
+p3 lam=0.3,b_vs_c,endoscopy,0.9851396765385423,276
+p3 lam=0.3,b_vs_c,histopathology,0.999792971378293,278
+p3 lam=0.3,b_vs_c,mri,0.9908108710180441,268
+p3 lam=0.3,b_vs_c,ultrasound,0.9994987747828024,268
+p3 lam=0.3,b_vs_c,xray,0.8993349308034623,286
+p3 lam=0.3,b_vs_d,ALL,0.9997093122670223,684
+p3 lam=0.3,b_vs_d,ct,0.999488,250
+p3 lam=0.3,b_vs_d,endoscopy,1.0,226
+p3 lam=0.3,b_vs_d,histopathology,,0
+p3 lam=0.3,b_vs_d,mri,1.0,144
+p3 lam=0.3,b_vs_d,ultrasound,1.0,64
+p3 lam=0.3,b_vs_d,xray,,0
+p3 lam=0.3,a_vs_b,ALL,0.5253460708438475,2302
+p3 lam=0.3,a_vs_b,ct,0.7181737061273051,492
+p3 lam=0.3,a_vs_b,endoscopy,0.4604291995365153,502
+p3 lam=0.3,a_vs_b,histopathology,0.23047461311526318,278
+p3 lam=0.3,a_vs_b,mri,0.47237015741351684,412
+p3 lam=0.3,a_vs_b,ultrasound,0.4985847002467702,332
+p3 lam=0.3,a_vs_b,xray,0.5135458946647757,286

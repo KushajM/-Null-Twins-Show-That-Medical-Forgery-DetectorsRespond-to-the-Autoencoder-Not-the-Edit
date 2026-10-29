@@ -1,0 +1,60 @@
+\section{Related work}
+\label{sec:related}
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Medical forgery datasets.} ``n.s.'': not stated in the paper or card; ``n/a'': not applicable (whole images are synthesised). \emph{Null twin}: an unedited copy that passed the same generator. \emph{Background preserved}: pixels outside the edit are bit-identical to the source. Public status checked on 29 Sep 2026. % src: docs/council/round2/landscape_and_odds.md (Sec. 2)
+}
+\label{tab:datasets}
+\footnotesize
+\setlength{\tabcolsep}{3.0pt}
+\begin{tabular}{@{}llllllccl@{}}
+\toprule
+Dataset & Venue & Modalities & Size & Edits & Mask & Null twin & Bkgd.\ preserved & Public \\
+\midrule
+CT-GAN~\cite{mirsky2019ctgan} & USENIX Sec 2019 & 3D lung CT & 100 scans & inject / remove & location only & \xmark & n.s. & \cmark \\ % src: docs/council/round2/landscape_and_odds.md (Sec. 2)
+M3Dsynth~\cite{zingarini2024m3dsynth} & ICASSP 2024 & 3D lung CT & 8,577 scans & inject / remove & 32\,mm cube & \xmark & n.s. & \cmark\ (non-profit) \\ % src: docs/council/round2/landscape_and_odds.md (Sec. 2)
+BTD test sets~\cite{grabovski2025btd} & TIST 2025 & lung CT, breast MRI & 6 test sets & inject / remove & n.s. & \xmark & n.s. & \cmark \\ % src: docs/council/round2/landscape_and_odds.md (Sec. 2)
+MedForensics~\cite{li2025medforensics} & MICCAI 2025 & 6 modalities & 116K (256$^2$) & full synthesis & image label & \xmark & n/a & not released$^{\dagger}$ \\ % src: docs/council/round2/landscape_and_odds.md (Sec. 2)
+CTForensics~\cite{ctforensics2026} & arXiv 2026 & 2D CT & 75,990 & full synthesis & image label & \xmark & n/a & not yet \\ % src: docs/council/round2/landscape_and_odds.md (Sec. 2)
+Med-Banana-50K~\cite{medbanana2025} & arXiv 2025 & CXR, brain MRI, fundus & 50,635 edits & semantic edits & n.s. & \xmark & n.s. & \cmark \\ % src: docs/council/round2/landscape_and_odds.md (Sec. 2)
+MedForge-90K~\cite{chen2026medforge} & ACL 2026 & CXR, brain MRI, fundus & 95,276 & semantic edits, 10 editors & boxes & \xmark & \xmark & \cmark\ (C-UDA) \\ % src: docs/council/round2/landscape_and_odds.md (Sec. 1, 2)
+\midrule
+\dataset (ours) & -- & CT, endo., histo., MRI, US, X-ray & 3,956 lineages & inject / remove, copy-move & per-pixel, lesion-shaped & \cmark & \cmark\ (100\%) & \cmark$^{\ddagger}$ \\ % src: docs/council/context_dossier.md (A); docs/MEDFORENSICS_V2.md (Sec. 8.6, audit 4.1)
+\bottomrule
+\end{tabular}\\[2pt]
+\begin{minipage}{\linewidth}\footnotesize
+$^{\dagger}$The paper's MICCAI rebuttal states that the dataset and code will be released upon acceptance~\cite{li2025medforensics}; we found no public release by 29 Sep 2026. % src: docs/council/round2/landscape_and_odds.md (Sec. 2, [R7]); papers.miccai.org/miccai-2025/0935-Paper2888.html (rebuttal)
+$^{\ddagger}$Gated access; a subset, loader and datasheet are in the supplementary material, and the full release is public by camera-ready (\anonlink).
+\end{minipage}
+\end{table*}
+
+\paragraph{Generator fingerprints and how to control them.}
+Real-versus-fake detectors read low-level generator traces: up-sampling artefacts (NPR~\cite{tan2024npr}), reconstruction error under a diffusion model (DIRE~\cite{wang2023dire}, LaRE$^2$~\cite{luo2024lare2}) or its autoencoder (AEROBLADE~\cite{ricker2024aeroblade}), or frozen CLIP features (UniFD~\cite{ojha2023unifd}).
+Inpainting detectors such as End4~\cite{wang2025end4} and HIDE~\cite{ji2026hide} reuse one-step denoising or diffusion features, and training-free localisation compares guided diffusion reconstructions~\cite{zhang2025trainingfree}; HIDE falls from AUC 0.98 on SD-1.5 inpaintings to 0.57 on SD-2. % src: docs/council/round2/irp_prior_art.md (Local diffusion forensics)
+Image manipulation localisation models (TruFor~\cite{guillaro2023trufor}, MVSS-Net~\cite{chen2021mvss}, PSCC-Net~\cite{liu2022pscc}, IML-ViT~\cite{ma2023imlvit}, Mesorch~\cite{zhu2025mesorch}; benchmarked in IMDL-BenCo~\cite{ma2024imdlbenco}) predict a per-pixel map.
+Three works confront the fingerprint in natural images.
+Aligned Datasets~\cite{rajan2025aligned} uses autoencoder reconstructions of real images, without denoising, as the fake class, the same object as our null twin.
+B-Free~\cite{guillaro2025bfree} generates fakes by self-conditioned inpainting and adds local inpaintings with the original background restored.
+INP-X~\cite{nebioglu2026inpx} shows that detectors rely on global artefacts and collapse when the background is restored.
+The first two use aligned images as \emph{training data}, and the third as a stress test, all for whole-image detection of natural images.
+We use the twin as a \emph{measurement control} for local medical edits: every forgery ships with its twin, so the share of a detector's score that the autoencoder explains can be read off directly.
+
+\paragraph{Medical forgery data.}
+\Cref{tab:datasets} lists the medical datasets.
+CT-GAN~\cite{mirsky2019ctgan}, M3Dsynth~\cite{zingarini2024m3dsynth} and BTD~\cite{grabovski2025btd} inject and remove lung nodules in 3D CT; MedForensics~\cite{li2025medforensics} and CTForensics~\cite{ctforensics2026} target fully synthetic images.
+MedForge-90K~\cite{chen2026medforge} is the closest and largest local-edit benchmark: 95,276 images over three modalities and ten editors, % src: docs/council/round2/landscape_and_odds.md (Sec. 1)
+localised by boxes, with the editor's whole output saved, so the background also changes. % src: docs/council/round2/landscape_and_odds.md (Sec. 1); docs/council/round2/experiments/README.md (harness fact 6)
+None has a null twin.
+Our contribution is not scale: \dataset trades MedForge's breadth for the control that makes its numbers interpretable, and we use MedForge itself as a test bed (\cref{sec:confound}).
+
+\paragraph{Anomaly detection and reconstruction.}
+Predicting a clean image and reading the residual is the anomaly-detection recipe: DRAEM~\cite{zavrtanik2021draem} and RIAD~\cite{zavrtanik2021riad} reconstruct or inpaint, pDDPM~\cite{behrendt2024pddpm} denoises patches at a fixed timestep, and LMD~\cite{liu2023lmd} inpaints under alternating masks.
+Applied to forgeries, these priors meet a medical complication: real pathology is itself an anomaly, so a model trained on healthy tissue can score an unedited lesion above the healthy tissue painted over it.
+A frozen-generator probe from this family is at chance on \dataset (\cref{sec:oracle}).
+
+\paragraph{Change detection and integrity checks.}
+When a reference image exists, for example an archived original, tamper detection becomes change detection.
+FC-Siam-diff~\cite{daudt2018fcsiam}, BIT~\cite{chen2022bit} and ChangeFormer~\cite{bandara2022changeformer} compare two images with a shared encoder, and robust image hashing~\cite{venkatesan2000hash,swaminathan2006hash} certifies that content is unchanged under benign processing.
+Our reference-based rows are baselines from these families (FC-Siam-diff on a Mesorch trunk, subtraction, a block-wise hash), and none is claimed as new; their role is to show what the protocol's operating points reveal.
+For small targets, tiled inference (SAHI~\cite{akyon2022sahi}) is the standard remedy; CT lesions in \dataset cover about 0.1\% of the frame. % src: docs/council/context_dossier.md (A, mask areas)

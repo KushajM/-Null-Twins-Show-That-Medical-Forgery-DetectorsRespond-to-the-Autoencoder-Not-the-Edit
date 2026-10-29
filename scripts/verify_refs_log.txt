@@ -1,0 +1,122 @@
+== guillaro2025bfree
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: A Bias-Free Training Paradigm for More General AI-generated Image Detection | Fabrizio Guillaro, Giada Zingarini, Ben Usman, Avneesh Sud, Davide Cozzolino, Luisa Verdoliva | 2024-12-23 | journal_ref=- | comment=-
+== rajan2025aligned
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Aligned Datasets Improve Detection of Latent Diffusion-Generated Images | Anirudh Sundara Rajan, Utkarsh Ojha, Jedidiah Schloesser, Yong Jae Lee | 2024-10-15 | journal_ref=- | comment=-
+== nebioglu2026inpx
+  arXiv: AI-Generated Image Detectors Overrely on Global Artifacts: Evidence from Inpainting Exchange | Elif Nebioglu, Emirhan Bilgiç, Adrian Popescu | 2026-01-30 | journal_ref=- | comment=21 pages, 15 figures, 6 tables
+== ricker2024aeroblade
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: AEROBLADE: Training-Free Detection of Latent Diffusion Images Using Autoencoder Reconstruction Error | Jonas Ricker, Denis Lukovnikov, Asja Fischer | 2024-01-31 | journal_ref=- | comment=Accepted to CVPR 2024
+== tan2024npr
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Rethinking the Up-Sampling Operations in CNN-based Generative Network for Generalizable Deepfake Detection | Chuangchuang Tan, Huan Liu, Yao Zhao, Shikui Wei, Guanghua Gu, Ping Liu, Yunchao Wei | 2023-12-16 | journal_ref=- | comment=10 pages, 4 figures
+== ojha2023unifd
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Towards Universal Fake Image Detectors that Generalize Across Generative Models | Utkarsh Ojha, Yuheng Li, Yong Jae Lee | 2023-02-20 | journal_ref=- | comment=-
+== wang2023dire
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: DIRE for Diffusion-Generated Image Detection | Zhendong Wang, Jianmin Bao, Wengang Zhou, Weilun Wang, Hezhen Hu, Hong Chen, Houqiang Li | 2023-03-16 | journal_ref=- | comment=A general diffusion-generated image detector
+== luo2024lare2
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+== wang2026end4
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: End4: End-to-end Denoising Diffusion for Diffusion-Based Inpainting Detection | Fei Wang, Xuecheng Wu, Zheng Zhang, Danlei Huang, Yuheng Huang, Bo Wang | 2025-09-16 | journal_ref=- | comment=-
+== ji2026hide
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+== zhu2025mesorch
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Mesoscopic Insights: Orchestrating Multi-scale & Hybrid Architecture for Image Manipulation Localization | Xuekang Zhu, Xiaochen Ma, Lei Su, Zhuohang Jiang, Bo Du, Xiwen Wang, Zeyu Lei, Wentao Feng | 2024-12-18 | journal_ref=- | comment=AAAI 2025. Code: $\href{https://github.com/scu-zjz/Mesorch}{this~url}$
+== ma2024imdlbenco
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: IMDL-BenCo: A Comprehensive Benchmark and Codebase for Image Manipulation Detection & Localization | Xiaochen Ma, Xuekang Zhu, Lei Su, Bo Du, Zhuohang Jiang, Bingkui Tong, Zeyu Lei, Xinyu Yang | 2024-06-15 | journal_ref=- | comment=Technical report, NeurIPS Spotlight of Benchmark and Dataset Track 2024
+== guillaro2023trufor
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: TruFor: Leveraging all-round clues for trustworthy image forgery detection and localization | Fabrizio Guillaro, Davide Cozzolino, Avneesh Sud, Nicholas Dufour, Luisa Verdoliva | 2022-12-21 | journal_ref=- | comment=-
+== chen2021mvss
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Image Manipulation Detection by Multi-View Multi-Scale Supervision | Xinru Chen, Chengbo Dong, Jiaqi Ji, Juan Cao, Xirong Li | 2021-04-14 | journal_ref=- | comment=Accepted by ICCV 2021
+== ma2023imlvit
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: IML-ViT: Benchmarking Image Manipulation Localization by Vision Transformer | Xiaochen Ma, Bo Du, Zhuohang Jiang, Xia Du, Ahmed Y. Al Hammadi, Jizhe Zhou | 2023-07-27 | journal_ref=- | comment=-
+== liu2022pscc
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: PSCC-Net: Progressive Spatio-Channel Correlation Network for Image Manipulation Detection and Localization | Xiaohong Liu, Yaojie Liu, Jun Chen, Xiaoming Liu | 2021-03-19 | journal_ref=- | comment=Published in IEEE Transactions on Circuits and Systems for Video Technology. Codes and models are available at https://github.com/proteus1991/PSCC-Net
+== chen2026medforge
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: MedForge: Interpretable Medical Deepfake Detection via Forgery-aware Reasoning | Zhihui Chen, Kai He, Qingyuan Lei, Bin Pu, Jian Zhang, Yuling Xu, Mengling Feng | 2026-03-19 | journal_ref=- | comment=-
+== li2025medforensics
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Toward Medical Deepfake Detection: A Comprehensive Dataset and Novel Method | Shuaibo Li, Zhaohu Xing, Hongqiu Wang, Pengfei Hao, Xingyu Li, Zekai Liu, Lei Zhu | 2025-09-19 | journal_ref=- | comment=-
+== mirsky2019ctgan
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: CT-GAN: Malicious Tampering of 3D Medical Imagery using Deep Learning | Yisroel Mirsky, Tom Mahler, Ilan Shelef, Yuval Elovici | 2019-01-11 | journal_ref=- | comment=This paper is included in the Proceedings of the 28th USENIX Security Symposium (USENIX Security 2019)
+== zingarini2024m3dsynth
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: M3Dsynth: A dataset of medical 3D images with AI-generated local manipulations | Giada Zingarini, Davide Cozzolino, Riccardo Corvi, Giovanni Poggi, Luisa Verdoliva | 2023-09-14 | journal_ref=- | comment=-
+== grabovski2024btd
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Back-in-Time Diffusion: Unsupervised Detection of Medical Deepfakes | Fred Grabovski, Lior Yasur, Guy Amit, Yisroel Mirsky | 2024-07-21 | journal_ref=- | comment=-
+== ctforensics2026
+  arXiv: CTForensics: A Comprehensive Dataset and Method for AI-Generated CT Image Detection | Yiheng Li, Zichang Tan, Guoqing Xu, Yichun Yeh, Yang Yang, Zhen Lei | 2026-03-02 | journal_ref=- | comment=under review, repo: https://github.com/liyih/CTForensics
+== medbanana2025
+  arXiv: Med-Banana: Learning Quality-Controlled Medical Image Editing from Success-and-Failure Trajectories | Zhihui Chen, Qingyuan Lei, Kai He, Yanrui Du, Mengling Feng | 2025-11-02 | journal_ref=- | comment=-
+== zavrtanik2021draem
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: DRAEM -- A discriminatively trained reconstruction embedding for surface anomaly detection | Vitjan Zavrtanik, Matej Kristan, Danijel Skočaj | 2021-08-17 | journal_ref=- | comment=Accepted to ICCV2021
+== zavrtanik2021riad
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+== behrendt2024pddpm
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Patched Diffusion Models for Unsupervised Anomaly Detection in Brain MRI | Finn Behrendt, Debayan Bhattacharya, Julia Krüger, Roland Opfer, Alexander Schlaefer | 2023-03-07 | journal_ref=- | comment=Accepted full paper at the MIDL23 conference
+== liu2023lmd
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Unsupervised Out-of-Distribution Detection with Diffusion Inpainting | Zhenzhen Liu, Jin Peng Zhou, Yufan Wang, Kilian Q. Weinberger | 2023-02-20 | journal_ref=- | comment=ICML 2023
+== akyon2022sahi
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Slicing Aided Hyper Inference and Fine-tuning for Small Object Detection | Fatih Cagatay Akyon, Sinan Onur Altinuc, Alptekin Temizel | 2022-02-14 | journal_ref=- | comment=Presented at ICIP 2022, 5 pages, 4 figures, 2 tables
+== daudt2018fcsiam
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Fully Convolutional Siamese Networks for Change Detection | Rodrigo Caye Daudt, Bertrand Le Saux, Alexandre Boulch | 2018-10-19 | journal_ref=- | comment=To appear inProc. ICIP 2018, October 07-10, 2018, Athens, Greece
+== chen2022bit
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: Remote Sensing Image Change Detection with Transformers | Hao Chen, Zipeng Qi, Zhenwei Shi | 2021-02-27 | journal_ref=- | comment=14 pages, 8 figures. Accepted article by IEEE TGRS
+== bandara2022changeformer
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+  arXiv: A Transformer-Based Siamese Network for Change Detection | Wele Gedara Chaminda Bandara, Vishal M. Patel | 2022-01-04 | journal_ref=- | comment=Accepted to International Geoscience and Remote Sensing Symposium (IGARSS), 2022. 4 pages, 2 figures. Code & trained models are available at https://github.com/
+== venkatesan2000hash
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+== swaminathan2006hash
+  dblp : ERROR JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+== rombach2022ldm
+  dblp : ERROR CalledProcessError(56, ['curl.exe', '-s', '-A', 'Mozilla/5.0 (refs-check)', 'https://dblp.org/search/publ/api?q=High-Resolution+Image+Synthesis+with+Latent+Diffusion+Models&format=json&h=3'])
+  arXiv: High-Resolution Image Synthesis with Latent Diffusion Models | Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer | 2021-12-20 | journal_ref=- | comment=CVPR 2022
+== podell2024sdxl
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+  arXiv: SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis | Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, Robin Rombach | 2023-07-04 | journal_ref=- | comment=-
+== suvorov2022lama
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+  arXiv: Resolution-robust Large Mask Inpainting with Fourier Convolutions | Roman Suvorov, Elizaveta Logacheva, Anton Mashikhin, Anastasia Remizova, Arsenii Ashukha, Aleksei Silvestrov, Naejin Kong, Harshith Goka | 2021-09-15 | journal_ref=- | comment=Winter Conference on Applications of Computer Vision (WACV 2022)
+== armato2011lidc
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+== jha2020kvasirseg
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+  arXiv: Kvasir-SEG: A Segmented Polyp Dataset | Debesh Jha, Pia H. Smedsrud, Michael A. Riegler, Pål Halvorsen, Thomas de Lange, Dag Johansen, Håvard D. Johansen | 2019-11-16 | journal_ref=- | comment=12 pages, 4 figures, 26TH INTERNATIONAL CONFERENCE ON MULTIMEDIA MODELING
+== borgli2020hyperkvasir
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+== aldhabyani2020busi
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+== cheng2015brain
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+== borkowski2019lc25000
+  arXiv: Lung and Colon Cancer Histopathological Image Dataset (LC25000) | Andrew A. Borkowski, Marilyn M. Bui, L. Brannon Thomas, Catherine P. Wilson, Lauren A. DeLand, Stephen M. Mastorides | 2019-12-16 | journal_ref=- | comment=2 pages
+== rahman2020tb
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+== gebru2021datasheets
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+  arXiv: Datasheets for Datasets | Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé, Kate Crawford | 2018-03-23 | journal_ref=- | comment=Published in CACM in December, 2021
+== zhang2025trainingfree
+  dblp : ERROR RemoteDisconnected('Remote end closed connection without response')
+== nuzhdin2026fused
+  arXiv: FUSED: Forensic-Semantic Mixture-of-Experts for AI Inpainting Detection and Localization | Anton Nuzhdin, Marcel Worring, Ivona Najdenkoska | 2026-08-28 | journal_ref=- | comment=-

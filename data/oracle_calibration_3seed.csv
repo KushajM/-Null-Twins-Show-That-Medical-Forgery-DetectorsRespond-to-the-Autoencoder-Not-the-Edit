@@ -1,0 +1,85 @@
+model,task,modality,mean,std,count
+Mesorch + null-twin negatives,a_vs_b,ALL,0.7078737989947964,0.00992844316689916,3
+Mesorch + null-twin negatives,a_vs_b,ct,0.5351838324811298,0.002636825262275583,3
+Mesorch + null-twin negatives,a_vs_b,endoscopy,0.6462880886426593,0.016766319381474423,3
+Mesorch + null-twin negatives,a_vs_b,histopathology,0.6238662131519274,0.05546340715742729,3
+Mesorch + null-twin negatives,a_vs_b,mri,0.834733329980048,0.010021583832030225,3
+Mesorch + null-twin negatives,a_vs_b,ultrasound,0.8793518518518518,0.005551310106249476,3
+Mesorch + null-twin negatives,a_vs_b,xray,0.9035627322824554,0.01699255311628212,3
+Mesorch + null-twin negatives,b_vs_c,ALL,0.7242148760330579,0.004197001150813232,3
+Mesorch + null-twin negatives,b_vs_c,ct,0.5455216989843029,0.003564508473926421,3
+Mesorch + null-twin negatives,b_vs_c,endoscopy,0.6865,0.008083316151184504,3
+Mesorch + null-twin negatives,b_vs_c,histopathology,0.9753401360544217,0.0033115990491915954,3
+Mesorch + null-twin negatives,b_vs_c,mri,0.7931421246595097,0.006976939931766452,3
+Mesorch + null-twin negatives,b_vs_c,ultrasound,0.8319341563786008,0.01777930187035016,3
+Mesorch + null-twin negatives,b_vs_c,xray,0.6995386389850058,0.02714662370171171,3
+Mesorch + null-twin negatives,b_vs_d,ALL,0.7856743800461361,0.00392383996496478,3
+Mesorch + null-twin negatives,b_vs_d,ct,0.5376954732510288,0.00416878724679143,3
+Mesorch + null-twin negatives,b_vs_d,endoscopy,0.9875720164609053,0.004311374766653098,3
+Mesorch + null-twin negatives,b_vs_d,histopathology,,,0
+Mesorch + null-twin negatives,b_vs_d,mri,0.934616718695803,0.0008041639347464043,3
+Mesorch + null-twin negatives,b_vs_d,ultrasound,0.9544444444444444,0.010223832401364664,3
+Mesorch + null-twin negatives,b_vs_d,xray,,,0
+"frozen, max inside true mask",a_vs_b,ALL,0.8575169753908631,0.0,1
+"frozen, max inside true mask",a_vs_b,ct,0.5757487216946676,0.0,1
+"frozen, max inside true mask",a_vs_b,endoscopy,0.891578947368421,0.0,1
+"frozen, max inside true mask",a_vs_b,histopathology,0.9649943310657596,0.0,1
+"frozen, max inside true mask",a_vs_b,mri,0.9322468688697751,0.0,1
+"frozen, max inside true mask",a_vs_b,ultrasound,0.9697916666666667,0.0,1
+"frozen, max inside true mask",a_vs_b,xray,0.9587658592848904,0.0,1
+"frozen, max inside true mask",b_vs_c,ALL,0.7227801652892561,0.0,1
+"frozen, max inside true mask",b_vs_c,ct,0.5340720221606648,0.0,1
+"frozen, max inside true mask",b_vs_c,endoscopy,0.6901,0.0,1
+"frozen, max inside true mask",b_vs_c,histopathology,0.9706632653061225,0.0,1
+"frozen, max inside true mask",b_vs_c,mri,0.8006729690754687,0.0,1
+"frozen, max inside true mask",b_vs_c,ultrasound,0.8622222222222222,0.0,1
+"frozen, max inside true mask",b_vs_c,xray,0.722318339100346,0.0,1
+"frozen, max inside true mask",b_vs_d,ALL,0.7367133434256056,0.0,1
+"frozen, max inside true mask",b_vs_d,ct,0.48012345679012347,0.0,1
+"frozen, max inside true mask",b_vs_d,endoscopy,0.9845679012345679,0.0,1
+"frozen, max inside true mask",b_vs_d,histopathology,,,0
+"frozen, max inside true mask",b_vs_d,mri,0.9128511966701353,0.0,1
+"frozen, max inside true mask",b_vs_d,ultrasound,0.94,0.0,1
+"frozen, max inside true mask",b_vs_d,xray,,,0
+oracle mask channel,a_vs_b,ALL,0.6831590901466761,0.014760360570804154,3
+oracle mask channel,a_vs_b,ct,0.5408911614317019,0.006993684904655697,3
+oracle mask channel,a_vs_b,endoscopy,0.639741458910434,0.01689894993056466,3
+oracle mask channel,a_vs_b,histopathology,0.7044595616024187,0.07722473749974557,3
+oracle mask channel,a_vs_b,mri,0.7910903207417467,0.017669411775146752,3
+oracle mask channel,a_vs_b,ultrasound,0.8532175925925927,0.029101411422410527,3
+oracle mask channel,a_vs_b,xray,0.7815263360246059,0.016039907518728733,3
+oracle mask channel,b_vs_c,ALL,0.793801652892562,0.002081155617954812,3
+oracle mask channel,b_vs_c,ct,0.5337396121883656,0.014026434616882653,3
+oracle mask channel,b_vs_c,endoscopy,0.7548666666666667,0.004190730511763118,3
+oracle mask channel,b_vs_c,histopathology,0.9684901738473166,0.0022238477505555207,3
+oracle mask channel,b_vs_c,mri,0.8427602414143033,0.012757112548732805,3
+oracle mask channel,b_vs_c,ultrasound,0.8642798353909464,0.011057177439300746,3
+oracle mask channel,b_vs_c,xray,0.7358387799564271,0.01189582012217192,3
+oracle mask channel,b_vs_d,ALL,0.9363736303344868,0.00577097825717166,3
+oracle mask channel,b_vs_d,ct,0.8276954732510289,0.005791806447986589,3
+oracle mask channel,b_vs_d,endoscopy,0.9925514403292182,0.0033769939487948326,3
+oracle mask channel,b_vs_d,histopathology,,,0
+oracle mask channel,b_vs_d,mri,0.935397155740548,0.012064952295100824,3
+oracle mask channel,b_vs_d,ultrasound,0.927037037037037,0.0010475656017578548,3
+oracle mask channel,b_vs_d,xray,,,0
+zero mask channel (control),a_vs_b,ALL,0.7096556970418124,0.0,1
+zero mask channel (control),a_vs_b,ct,0.5344046749452155,0.0,1
+zero mask channel (control),a_vs_b,endoscopy,0.6876731301939059,0.0,1
+zero mask channel (control),a_vs_b,histopathology,0.5418083900226758,0.0,1
+zero mask channel (control),a_vs_b,mri,0.8477943765404155,0.0,1
+zero mask channel (control),a_vs_b,ultrasound,0.8566666666666667,0.0,1
+zero mask channel (control),a_vs_b,xray,0.8900422914263745,0.0,1
+zero mask channel (control),b_vs_c,ALL,0.7259338842975207,0.0,1
+zero mask channel (control),b_vs_c,ct,0.5397229916897507,0.0,1
+zero mask channel (control),b_vs_c,endoscopy,0.6673,0.0,1
+zero mask channel (control),b_vs_c,histopathology,0.9800170068027211,0.0,1
+zero mask channel (control),b_vs_c,mri,0.8000320461464508,0.0,1
+zero mask channel (control),b_vs_c,ultrasound,0.8393827160493827,0.0,1
+zero mask channel (control),b_vs_c,xray,0.6968473663975394,0.0,1
+zero mask channel (control),b_vs_d,ALL,0.7839262543252595,0.0,1
+zero mask channel (control),b_vs_d,ct,0.5359259259259259,0.0,1
+zero mask channel (control),b_vs_d,endoscopy,0.9883950617283951,0.0,1
+zero mask channel (control),b_vs_d,histopathology,,,0
+zero mask channel (control),b_vs_d,mri,0.9344432882414152,0.0,1
+zero mask channel (control),b_vs_d,ultrasound,0.9588888888888889,0.0,1
+zero mask channel (control),b_vs_d,xray,,,0

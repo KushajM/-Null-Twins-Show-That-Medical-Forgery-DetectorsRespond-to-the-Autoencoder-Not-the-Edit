@@ -1,0 +1,14 @@
+arm,kind,n,deepfake_rate,n_brain_mri,n_fundus
+R,real,186,0.005376344086021506,96.0,90.0
+N_jpeg,real,186,0.005376344086021506,96.0,90.0
+N_sd,real,186,0.9247311827956989,96.0,90.0
+N_sdxl,real,186,0.7204301075268817,96.0,90.0
+F (MedForge forgery),forged,48,1.0,25.0,23.0
+R,real/brain-mri,96,0.010416666666666666,,
+R,real/fundus,90,0.0,,
+N_jpeg,real/brain-mri,96,0.010416666666666666,,
+N_jpeg,real/fundus,90,0.0,,
+N_sd,real/brain-mri,96,0.9583333333333334,,
+N_sd,real/fundus,90,0.8888888888888888,,
+N_sdxl,real/brain-mri,96,0.65625,,
+N_sdxl,real/fundus,90,0.7888888888888889,,

@@ -1,0 +1,62 @@
+\section{The \dataset benchmark}
+\label{sec:dataset}
+
+\paragraph{Lineages and image variants.}
+A \emph{lineage} is one source image, one mask and one random seed.
+Every other image in the lineage is derived from the source with that mask and seed, and differs from it only inside the feathered mask.
+We use five letters throughout.
+\textbf{A}, the \emph{source}, is the untouched image.
+\textbf{B}, the \emph{null twin}, is the source passed through a generator's autoencoder inside the mask with nothing edited; there is one per generator (B$_\text{SD}$, B$_\text{LaMa}$, B$_\text{SDXL}$).
+\textbf{C}, an \emph{injection}, paints a lesion into healthy tissue.
+\textbf{D}, a \emph{removal}, paints healthy tissue over a real, human-outlined lesion.
+\textbf{CM}, a \emph{copy-move}, moves tissue within the same image, by translation or with a 3--15$^\circ$ rotation; % src: docs/council/context_dossier.md (arm glossary)
+no generator is involved, so copy-move is the generator-free control.
+Injection lineages contain A, B and C, removal lineages A, B and D, and all lineages contain CM.
+\dataset has 2,677 injection and 1,279 removal lineages. % src: docs/council/context_dossier.md (A, Arms)
+
+\paragraph{Sources and masks.}
+CT contributes 900 lineages, % src: docs/council/context_dossier.md (A); Deepfakedoctillnow.pdf p.1
+rendered in a lung window at 512$^2$ from LIDC-IDRI~\cite{armato2011lidc} (1,018 series, 1,010 patients). % src: docs/MEDFORENSICS_V2.md (Sec. 3)
+CT injections use slices that none of the four LIDC readers annotated, so the tissue at the edit is verified healthy; CT removals use nodule slices with a unanimous four-reader contour, dilated by 3\,px. % src: docs/MEDFORENSICS_V2.md (Sec. 3)
+Endoscopy (830 lineages) % src: docs/council/context_dossier.md (A, lineages by modality)
+uses HyperKvasir~\cite{borgli2020hyperkvasir} frames for injection and Kvasir-SEG~\cite{jha2020kvasirseg} polyps for removal.
+Histopathology (427) % src: docs/council/context_dossier.md (A, lineages by modality)
+uses LC25000 colon tiles~\cite{borkowski2019lc25000}.
+MRI (754) % src: docs/council/context_dossier.md (A, lineages by modality)
+uses a public brain-tumour aggregate~\cite{nickparvar2021brainmri} for injection and the tumour masks of Cheng \etal~\cite{cheng2015brain}, patient-disjoint, for removal.
+Ultrasound (595) % src: docs/council/context_dossier.md (A, lineages by modality)
+uses BUSI~\cite{aldhabyani2020busi} and its masks.
+X-ray (450) % src: docs/council/context_dossier.md (A, lineages by modality)
+uses tuberculosis chest radiographs~\cite{rahman2020tb}.
+Histopathology and X-ray have no removal family: in LC25000 the tumour fills the tile, and tuberculosis on a radiograph has no outline to remove.
+Injection masks are irregular star-convex blobs placed in anatomically plausible regions; removal masks are the human contours (largest connected component, dilated by 3\,px and feathered with the same law as the blobs). % src: docs/MEDFORENSICS_V2.md (Sec. 4, 7.1)
+Median mask area runs from 0.11\% of the frame (CT injection) to 5.23\% (endoscopy removal). % src: docs/council/context_dossier.md (A, mask area table)
+
+\paragraph{Generators and null twins.}
+\emph{SD} is Stable Diffusion~1.5 inpainting~\cite{rombach2022ldm} at a pinned revision (fp16, DDIM, 40 steps, guidance 7.5, strength 1.0), applied to a context crop resized to 512\,px with per-modality prompts and no fine-tuning; % src: docs/council/context_dossier.md (A, Generators)
+all removals use SD.
+\emph{LaMa} is big-LaMa~\cite{suvorov2022lama}.
+\emph{SDXL} is SDXL inpainting~0.1~\cite{podell2024sdxl} with the fp16-fix autoencoder at 1024\,px (30 steps, guidance 7.5, strength 0.99); % src: docs/council/round2/experiments/E0e_third_generator.md; docs/council/round2/experiments/README.md (Step 5: SDXL_RES = 1024)
+it is generated for the calibration and test splits only and never used for training, selection or thresholds.
+The SD and SDXL twins follow the edit's exact path: crop, resize, encode (latent sampled with the lineage seed), decode, resize back, and composite through the same soft mask.
+The LaMa twin is a forward pass with an empty mask.
+A twin and its forgery therefore share the crop, the resampling, the autoencoder and the compositing, and differ only in what the sampler did inside the mask.
+The twin matches the autoencoder, not the 40-step sampler, which is why we call it \emph{autoencoder-matched} rather than generator-matched.
+The SDXL twin is much closer to its source than the SD twin (median in-mask MSE 1.83 against 13.54), % src: docs/council/round2/experiments/README.md (Step 5)
+so SDXL false-alarm rates must be compared against SD twins matched on in-mask MSE (\cref{sec:operating}).
+Compositing rounds rather than truncates, so a twin cannot drift from its source along the feather.
+Outside the dilated mask, every image of all 3,956 lineages is bit-identical to its source, % src: docs/MEDFORENSICS_V2.md (Sec. 8.6, audit 4.1)
+as is every SDXL image, % src: docs/council/round2/experiments/README.md (Step 5, QC: outside-mask bit-identity 100%)
+and grayscale sources stay grayscale.
+
+\paragraph{Splits and audits.}
+Lineages are grouped into split units: patients for CT and MRI removal, near-duplicate clusters elsewhere (1.01--1.36 lineages per unit). % src: docs/council/context_dossier.md (A, No 3D)
+This gives 1,983 training, 822 calibration and 1,151 test lineages, frozen by hash; % src: docs/council/round2/experiments/local/split_freeze.json
+the calibration split is a validation split used only for model selection and thresholds.
+The release audits find that a classifier on image metadata (file size, header bytes, histogram) stays below a 0.55 AUC bar for every variant (maximum 0.341), % src: docs/MEDFORENSICS_V2.md (Sec. 8.6, audit 4.4)
+\TODO{re-run this audit with folds grouped by lineage: ungrouped folds bias paired data below 0.5}
+that mask geometry cannot tell copy-move from injection (AUC 0.500), % src: docs/MEDFORENSICS_V2.md (Sec. 8.6, audit 4.5)
+and that no source image backs two lineages. % src: docs/MEDFORENSICS_V2.md (Sec. 8.6, audit 4.9)
+Removal is not always complete, so its efficacy is published per lineage: the median drop in lesion-versus-surround Kolmogorov--Smirnov contrast is 0.204 in endoscopy, 0.273 in MRI and 0.509 in ultrasound. % src: docs/MEDFORENSICS_V2.md (Sec. 8.4)
+One audit reports a weakness rather than a pass: mask geometry alone separates removal from injection lineages (\cref{sec:family}).
+CT metadata is reduced to a whitelist of 15 fields with salted hashes, and no DICOM header ships. % src: docs/MEDFORENSICS_V2.md (Sec. 3)

@@ -1,0 +1,24 @@
+%% Project macros (kept out of the kit's preamble.tex).
+
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{array}
+
+%% Dataset name. "MedForensics" is taken (MICCAI 2025); candidates are listed in README.md.
+\newcommand{\dataset}{NullTwin-Med\xspace}
+
+%% Anonymous-link placeholder. Do not replace with a real URL before decisions:
+%% CVPR forbids links that identify the authors or expand the paper's content.
+\newcommand{\anonlink}{\texttt{[anonymous link withheld for review]}\xspace}
+
+%% Teaser: \teaserdrafttrue shows figures/teaser_draft.pdf (built from our own release
+%% images by scripts/make_figures.py); \teaserdraftfalse shows the placeholder box.
+\newif\ifteaserdraft
+\teaserdraftfalse
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\na}{--}
+
+%% Visible draft markers. Comment the two lines in preamble.tex before submission.
+\newcommand{\PENDING}[1]{\textbf{\color{orange}[PENDING: #1]}}

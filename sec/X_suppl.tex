@@ -1,0 +1,80 @@
+% Supplementary material: OUTLINE ONLY.
+% Following the author kit, compile it after the main paper by uncommenting
+% \input{sec/X_suppl} in main.tex, then split the pages off before submitting.
+% Supplementary deadline (AoE): Nov 23, 2026 (docs/council/round2/landscape_and_odds.md, Sec. 3).
+
+\clearpage
+\setcounter{page}{1}
+\maketitlesupplementary
+
+\section{Datasheet}
+\label{sec:supp:datasheet}
+\TODO{Write following Gebru \etal~\cite{gebru2021datasheets}.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{Motivation:} measuring how much of a forgery detector's score is the generator's autoencoder.
+\item \textbf{Composition:} lineages by modality $\times$ edit family $\times$ split (training / calibration / test), with image counts per variant; mask-area distributions; removal efficacy per lineage; near-duplicate flags; SDXL images (calibration and test only).
+\item \textbf{Collection and preprocessing:} CT rendering window and header whitelist; source linking and de-duplication across annotated corpora and their repackages; mask processing; generation settings; compositing rule; release audits.
+\item \textbf{Uses:} intended (forensic evaluation, robustness research); out of scope (clinical use, training forgers, re-identification). Known shortcuts: mask geometry separates families; removal is attempted, not guaranteed.
+\item \textbf{Distribution and maintenance:} gated access, research-use agreement, versioning, contact (anonymised for review).
+\end{itemize}
+
+\section{Licence table}
+\label{sec:supp:licence}
+\TODO{One row per source: dataset, original licence, whether redistribution of derived images is permitted, what we release (images, or generation scripts and manifests only), required attribution. Open items: the repackaged Kaggle sources for X-ray, histopathology, MRI and non-removal endoscopy and ultrasound have no recorded upstream licence.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item LIDC-IDRI~\cite{armato2011lidc}; HyperKvasir~\cite{borgli2020hyperkvasir}; Kvasir-SEG~\cite{jha2020kvasirseg}; LC25000~\cite{borkowski2019lc25000}; brain-tumour MRI aggregate~\cite{nickparvar2021brainmri}; Cheng \etal\ masks~\cite{cheng2015brain}; BUSI~\cite{aldhabyani2020busi}; TB radiographs~\cite{rahman2020tb}.
+\item Generators: SD-1.5 inpainting, big-LaMa, SDXL inpainting 0.1 and its fp16-fix autoencoder (model licences and pinned revisions).
+\item MedForge-90K (C-UDA): used for evaluation only; nothing derived from it is released.
+\end{itemize}
+
+\section{Generation details}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item Pinned model revisions, scheduler, steps, guidance, strength and resolution per generator; per-modality prompts and negative prompts.
+\item Crop and resize path; null-twin construction; compositing (feathered alpha, rounding, exact pass-through where the mask is zero); grayscale handling.
+\item Quality checks: outside-mask bit identity, degenerate twins, in-mask twin fidelity (SD against SDXL), contact sheets.
+\end{itemize}
+
+\section{Full per-modality results}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \Cref{tab:main} per modality, for every detector and task (source: \texttt{paper/data/main\_benchmark\_test.csv}).
+\item Localisation per modality and edit family, raw and null-penalised, at 0.5 and $t^\ast$, with the mask-shape baseline beside each family.
+\item Operating points (\cref{tab:op}) for every modality, every detector including $\lambda=0.3$, and the removal-lineage SD twins and LaMa twins as further negative types (source: \texttt{paper/data/operating\_points.csv}).
+\item Held-out SDXL per modality, including removal, with the MSE-matched SD-twin comparison. \TODO{E3a}
+\item Oracle-mask study per modality and seed (calibration only).
+\item MedForge per modality and per twin (brain MRI, fundus), with the duplicate-exclusion details.
+\end{itemize}
+
+\section{Additional analyses}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item Leave-one-modality-out and leave-one-generator-out training; training-set size (25\%, 50\%, 100\%). % src: work/e0/out_local/tables/table_main.csv (nai_v1/frac25, frac50)
+\item The paired-operator variants that tied or lost against absolute difference, and distillation.
+\item Benign-processing suite in full (both directions, per operation, with per-arm score spreads), the output-level invariance penalty, and the pre-registered $\lambda$ rule with its input hashes.
+\item Invariance-baseline seeds 43 and 44 (mean $\pm$ SD; any seed whose worst pooled FPR exceeds 0.20 is reported on its own). \TODO{E3d}
+\item Block-wise robust hash at 16 and 32 px. \TODO{E3c}
+\item Mask-swap test and in-mask versus out-of-mask false alarms.
+\item MedForge box audit in full: box-area distributions per arm, the 30 normal scans, and SD-versus-SDXL box overlap against a shuffled-source baseline.
+\item Classical copy-move detection (SIFT and RANSAC) as a generator-free baseline on A-vs-CM.
+\end{itemize}
+
+\paragraph{A falsified hypothesis: a frozen-generator probe.}
+If the autoencoder cannot separate a forgery from its twin, only the sampler can.
+We tested a training-free probe that asks the frozen SD-1.5 inpainting UNet how predictable each small latent region is: its one-step, hole-conditional noise-prediction error at a fixed timestep, normalised by the surrounding ring, on label-agnostic tiles.
+On all 822 calibration lineages the probe is at chance: 0.508 [0.497, 0.519] on SD edits, % src: work/e0/out_local/e1_irp/E1_REPORT.md
+0.501 on LaMa edits % src: work/e0/out_local/e1_irp/E1_REPORT.md
+and 0.507 on CT, % src: work/e0/out_local/e1_irp/e1_criteria.json (F4)
+no better than its autoencoder-only control (0.507; difference $+$0.001 [$-$0.012, 0.013]). % src: work/e0/out_local/e1_irp/E1_REPORT.md; e1_criteria.json
+Ablations without the mask channel (LaRE$^2$-style~\cite{luo2024lare2}) and with patch noising (pDDPM-style~\cite{behrendt2024pddpm}) are equally at chance. % src: work/e0/out_local/e1_irp/E1_REPORT.md (IRP_NM 0.5154, IRP_PD 0.5055)
+The only hint of signal is histopathology (0.568 against 0.518), % src: work/e0/out_local/e1_irp/E1_REPORT.md
+the one modality edited close to native scale; % src: docs/council/round3/framed_question.md (Results since then, IRP)
+CT edits were generated at a 3.2$\times$ zoom and then downsampled and pasted back. % src: docs/council/round2/experiments/README.md (harness fact 3)
+\TODO{E1b: positive control on edits generated at native scale without paste-back, judged by its own rules (erasure, no mechanism, or bug).}
+
+\section{Protocol details}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item Split hashes, split-unit construction and leakage checks; bootstrap procedure; seed variance.
+\item Test-split opening log: every model, date and the calibration decision it fed.
+\item Metric definitions: image score from the map, ground-truth rule for localisation, threshold selection.
+\end{itemize}
+
+\section{Data sample and loader}
+A subset of lineages from every modality and family, the loader, and the evaluation scripts are included in the supplementary archive, anonymised. \TODO{build the archive; check it contains no author or repository names}

@@ -1,0 +1,52 @@
+\section{Introduction}
+\label{sec:intro}
+
+Tampering with medical images is a demonstrated threat.
+In the CT-GAN study, lung nodules injected into or removed from CT scans fooled radiologists in 99\% and 94\% of cases~\cite{mirsky2019ctgan}. % src: docs/council/context_dossier.md (G, CT-GAN row)
+Text-guided editors now make such edits easy across modalities~\cite{medbanana2025,chen2026medforge}, and detecting them has become an active benchmark area~\cite{zingarini2024m3dsynth,grabovski2025btd,li2025medforensics,chen2026medforge}.
+
+These benchmarks score a detector by how well it separates untouched images from edited ones.
+But a generative edit is two interventions, not one.
+A lesion is painted inside a mask, and the image (or a crop of it) is encoded and decoded by the generator's autoencoder.
+In existing medical corpora the untouched class never passes through that autoencoder, so a detector can score well by recognising the autoencoder and never looking at the lesion.
+For natural images this shortcut is known, and it has been turned into better training data: Aligned Datasets~\cite{rajan2025aligned} trains on autoencoder reconstructions of real images, B-Free~\cite{guillaro2025bfree} on self-conditioned inpaintings with the background restored, and INP-X~\cite{nebioglu2026inpx} shows that detection rates fall from over 91\% to about 55\% once the inpainted image's background is restored. % src: docs/council/round2/irp_prior_art.md (Controls and threat model)
+No medical forgery benchmark controls for it.
+
+Whether autoencoder processing alone should count as forgery depends on the definition.
+Under a provenance definition, where any image a generative model has touched is synthetic, it should.
+We adopt CT-GAN's tamper definition instead~\cite{mirsky2019ctgan}: a forgery is content changed between the scanner and the archive.
+Under that definition, an image that passed an autoencoder unedited is authentic, and a provenance detector cannot tell a malicious edit from benign neural processing.
+
+We find that medical forgery detectors, including MedForge's own, respond to autoencoder processing rather than to the edit.
+MedForge-Reasoner~\cite{chen2026medforge}, an open-weight detector trained on MedForge-90K, flags all 48 MedForge forgeries we sampled % src: paper/data/medforge_reasoner_hardlabel.csv
+and 0.5\% of 186 untouched MedForge test scans. % src: paper/data/medforge_reasoner_hardlabel.csv
+After those scans pass through the Stable Diffusion inpainting autoencoder with no edit, it flags 95.8\% of brain MRI and 88.9\% of fundus scans (\cref{fig:medforge}). % src: docs/council/round3/experiments/local/r3_box_audit.csv (N_sd, real, fake_rate)
+It is wrong under either definition: every one of those verdicts comes with a lesion-sized box, comparable in size to the boxes it draws on real MedForge forgeries, whereas an image that is synthetic as a whole would call for a whole-image box (\cref{sec:confound}). % src: docs/council/round3/experiments/local/R3_STEP1_REPORT.md (Sec. 1: every null-twin fake call has a box)
+The same holds for conventionally trained detectors on our own data.
+Mesorch~\cite{zhu2025mesorch} fine-tuned to separate sources from forgeries scores AUC 0.963 on that task % src: work/e0/out_local/tables/table_main.csv
+but 0.536 when the negatives are the forgeries' own null twins, % src: work/e0/out_local/tables/table_main.csv
+images that passed the same autoencoder without being edited.
+By our fingerprint-share metric (\cref{sec:protocol}), 93\% of its margin over chance is reproduced by an image nobody edited. % src: paper/data/fingerprint_share_test.csv (derived); work/e0/out_local/tables/E1_REPORT.md
+
+To make this measurable, we release \dataset.
+To our knowledge, it is the first publicly released multi-modality medical local-edit forgery benchmark that pairs every generative edit with a per-pixel (non-box) mask, a background bit-identical to the source, and an autoencoder-matched null twin that passes the same generator without an edit.
+Each \emph{lineage} is one source image with one mask and one random seed, from which every other image is derived: the source itself, a \emph{null twin} per generator (the source passed through that generator's autoencoder inside the mask, with nothing edited), the lesion injection or removal, and two copy-move controls.
+\dataset holds 3,956 lineages across CT, endoscopy, histopathology, MRI, ultrasound and X-ray, % src: docs/council/context_dossier.md (A)
+edited by Stable Diffusion~1.5 inpainting and big-LaMa, with SDXL inpainting held out as a third generator.
+
+AUC alone cannot rank detectors on \dataset, so the protocol fixes one operating point on calibration and reads it against every kind of unedited image.
+Measured this way, single-image detection falls from 0.963 on the conventional task % src: work/e0/out_local/tables/table_main.csv
+to at most 0.768 against the twin, and stays near chance on CT. % src: work/e0/out_local/tables/e9_final_comparison.csv
+Comparing with the null twin as a reference makes AUC easy, but not the operating point.
+A zero-parameter pixel subtraction reaches 0.921, % src: work/e0/out_local/e0x/e0a/e0a_deltas.csv
+or 0.976 when standardised per modality, % src: docs/council/round3/experiments/local/r3_subtraction_standardised.csv (standardised, ALL)
+which is within 0.008 of a learned FC-Siam-diff baseline~\cite{daudt2018fcsiam}; % src: docs/council/round3/experiments/local/r3_subtraction_gap_to_p1n.csv (standardised, ALL)
+yet at 95\% recall subtraction flags 47\% of test null twins, % src: docs/council/round3/experiments/local/r3_operating_points.csv (sub_raw, fpr_test_SD_null)
+and the learned baseline flags 78\% of denoised sources. % src: docs/council/round3/experiments/local/r3_operating_points.csv (p1n, fpr_nlmeans)
+No detector we test is acceptable on every negative type.
+Our contributions are:
+\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+\item \textbf{Dataset.} \dataset, a six-modality local-edit benchmark with per-pixel lesion-shaped masks, bit-identical backgrounds and an autoencoder-matched null twin for every generative edit, over three generators with one held out (\cref{sec:dataset}).
+\item \textbf{Protocol.} Four controls that make a forgery-detection number interpretable: an autoencoder-matched unedited twin for every edit; one calibration operating point scored against every negative type, per modality, with same-generator drift beside cross-generator transfer; null-penalised localisation F1; and a mask-shape baseline beside every removal number. These come with frozen leak-free splits and calibration-only selection (\cref{sec:protocol}).
+\item \textbf{Findings.} The autoencoder response in three settings, including MedForge's own detector; per-modality operating points for single-image and reference-based detectors, which show that AUC gains do not carry over to false-alarm rates; and an oracle-mask diagnostic separating finding an edit from judging it (\cref{sec:results}).
+\end{itemize}

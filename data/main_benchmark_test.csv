@@ -1,0 +1,456 @@
+model,task,modality,auc,n
+Mesorch (zero-shot),a_vs_c,ALL,0.531154456737476,1618
+Mesorch (zero-shot),a_vs_c,ct,0.5150604466907998,242
+Mesorch (zero-shot),a_vs_c,endoscopy,0.49448645242596095,276
+Mesorch (zero-shot),a_vs_c,histopathology,0.5581491641219398,278
+Mesorch (zero-shot),a_vs_c,mri,0.5693361550456671,268
+Mesorch (zero-shot),a_vs_c,ultrasound,0.5338327021608376,268
+Mesorch (zero-shot),a_vs_c,xray,0.5305393906792508,286
+Mesorch (zero-shot),b_vs_c,ALL,0.5188408830814034,1618
+Mesorch (zero-shot),b_vs_c,ct,0.5121917901782665,242
+Mesorch (zero-shot),b_vs_c,endoscopy,0.4965080865364419,276
+Mesorch (zero-shot),b_vs_c,histopathology,0.5159153252937219,278
+Mesorch (zero-shot),b_vs_c,mri,0.5510135887725551,268
+Mesorch (zero-shot),b_vs_c,ultrasound,0.51459122298953,268
+Mesorch (zero-shot),b_vs_c,xray,0.5283387940730598,286
+Mesorch (zero-shot),b_vs_d,ALL,0.5241698300331726,684
+Mesorch (zero-shot),b_vs_d,ct,0.520704,250
+Mesorch (zero-shot),b_vs_d,endoscopy,0.4918944318270812,226
+Mesorch (zero-shot),b_vs_d,histopathology,,0
+Mesorch (zero-shot),b_vs_d,mri,0.595679012345679,144
+Mesorch (zero-shot),b_vs_d,ultrasound,0.51171875,64
+Mesorch (zero-shot),b_vs_d,xray,,0
+Mesorch (zero-shot),a_vs_cm,ALL,0.5474897739358591,2302
+Mesorch (zero-shot),a_vs_cm,ct,0.6581234714786173,492
+Mesorch (zero-shot),a_vs_cm,endoscopy,0.49227790035078806,502
+Mesorch (zero-shot),a_vs_cm,histopathology,0.498317892448631,278
+Mesorch (zero-shot),a_vs_cm,mri,0.5014610236591573,412
+Mesorch (zero-shot),a_vs_cm,ultrasound,0.5209391784003484,332
+Mesorch (zero-shot),a_vs_cm,xray,0.5676072179568683,286
+Mesorch (zero-shot),a_vs_b,ALL,0.5180378034134938,2302
+Mesorch (zero-shot),a_vs_b,ct,0.49788485689734946,492
+Mesorch (zero-shot),a_vs_b,endoscopy,0.4978492404882462,502
+Mesorch (zero-shot),a_vs_b,histopathology,0.546296775529217,278
+Mesorch (zero-shot),a_vs_b,mri,0.5703883495145631,412
+Mesorch (zero-shot),a_vs_b,ultrasound,0.526056031354333,332
+Mesorch (zero-shot),a_vs_b,xray,0.5007090811286615,286
+TruFor (zero-shot),a_vs_c,ALL,0.6568181505651043,1618
+TruFor (zero-shot),a_vs_c,ct,0.5007513148009016,242
+TruFor (zero-shot),a_vs_c,endoscopy,0.5112371350556606,276
+TruFor (zero-shot),a_vs_c,histopathology,0.9735520935769371,278
+TruFor (zero-shot),a_vs_c,mri,0.857707730006683,268
+TruFor (zero-shot),a_vs_c,ultrasound,0.5385386500334151,268
+TruFor (zero-shot),a_vs_c,xray,0.5699545210034721,286
+TruFor (zero-shot),b_vs_c,ALL,0.5223215036036187,1618
+TruFor (zero-shot),b_vs_c,ct,0.5009903695102793,242
+TruFor (zero-shot),b_vs_c,endoscopy,0.5050934677588742,276
+TruFor (zero-shot),b_vs_c,histopathology,0.5780756689612339,278
+TruFor (zero-shot),b_vs_c,mri,0.5643239028736913,268
+TruFor (zero-shot),b_vs_c,ultrasound,0.5091891289819559,268
+TruFor (zero-shot),b_vs_c,xray,0.542373710205878,286
+TruFor (zero-shot),b_vs_d,ALL,0.47645001880920623,684
+TruFor (zero-shot),b_vs_d,ct,0.501504,250
+TruFor (zero-shot),b_vs_d,endoscopy,0.4788550395489075,226
+TruFor (zero-shot),b_vs_d,histopathology,,0
+TruFor (zero-shot),b_vs_d,mri,0.3479938271604938,144
+TruFor (zero-shot),b_vs_d,ultrasound,0.4814453125,64
+TruFor (zero-shot),b_vs_d,xray,,0
+TruFor (zero-shot),a_vs_cm,ALL,0.6036253746789141,2302
+TruFor (zero-shot),a_vs_cm,ct,0.5446906603212374,492
+TruFor (zero-shot),a_vs_cm,endoscopy,0.4925556737194648,502
+TruFor (zero-shot),a_vs_cm,histopathology,0.8552869934268412,278
+TruFor (zero-shot),a_vs_cm,mri,0.8602837213686493,412
+TruFor (zero-shot),a_vs_cm,ultrasound,0.5118667440847728,332
+TruFor (zero-shot),a_vs_cm,xray,0.6068756418406768,286
+TruFor (zero-shot),a_vs_b,ALL,0.6044115304864656,2302
+TruFor (zero-shot),a_vs_b,ct,0.5006609822195783,492
+TruFor (zero-shot),a_vs_b,endoscopy,0.44482627259884766,502
+TruFor (zero-shot),a_vs_b,histopathology,0.9709124786501734,278
+TruFor (zero-shot),a_vs_b,mri,0.8691912527099632,412
+TruFor (zero-shot),a_vs_b,ultrasound,0.5518580345478299,332
+TruFor (zero-shot),a_vs_b,xray,0.5287300112474937,286
+IML-ViT (zero-shot),a_vs_c,ALL,0.5176666702318325,1618
+IML-ViT (zero-shot),a_vs_c,ct,0.5130114063247045,242
+IML-ViT (zero-shot),a_vs_c,endoscopy,0.526254988447805,276
+IML-ViT (zero-shot),a_vs_c,histopathology,0.5792143263806221,278
+IML-ViT (zero-shot),a_vs_c,mri,0.49955446647360213,268
+IML-ViT (zero-shot),a_vs_c,ultrasound,0.5,268
+IML-ViT (zero-shot),a_vs_c,xray,0.5026162648540271,286
+IML-ViT (zero-shot),b_vs_c,ALL,0.5169454881043147,1618
+IML-ViT (zero-shot),b_vs_c,ct,0.506591079844273,242
+IML-ViT (zero-shot),b_vs_c,endoscopy,0.5249422390254148,276
+IML-ViT (zero-shot),b_vs_c,histopathology,0.5824750271725067,278
+IML-ViT (zero-shot),b_vs_c,mri,0.4971040320784139,268
+IML-ViT (zero-shot),b_vs_c,ultrasound,0.503954110046781,268
+IML-ViT (zero-shot),b_vs_c,xray,0.5029585798816568,286
+IML-ViT (zero-shot),b_vs_d,ALL,0.5130339249683663,684
+IML-ViT (zero-shot),b_vs_d,ct,0.519168,250
+IML-ViT (zero-shot),b_vs_d,endoscopy,0.5285065392748062,226
+IML-ViT (zero-shot),b_vs_d,histopathology,,0
+IML-ViT (zero-shot),b_vs_d,mri,0.5196759259259259,144
+IML-ViT (zero-shot),b_vs_d,ultrasound,0.4580078125,64
+IML-ViT (zero-shot),b_vs_d,xray,,0
+IML-ViT (zero-shot),a_vs_cm,ALL,0.5195784121539764,2302
+IML-ViT (zero-shot),a_vs_cm,ct,0.5983624165509948,492
+IML-ViT (zero-shot),a_vs_cm,endoscopy,0.5276027364645005,502
+IML-ViT (zero-shot),a_vs_cm,histopathology,0.4817038455566482,278
+IML-ViT (zero-shot),a_vs_cm,mri,0.48411725893109625,412
+IML-ViT (zero-shot),a_vs_cm,ultrasound,0.49811293366236026,332
+IML-ViT (zero-shot),a_vs_cm,xray,0.5078487945620813,286
+IML-ViT (zero-shot),a_vs_b,ALL,0.5026151097410102,2302
+IML-ViT (zero-shot),a_vs_b,ct,0.5000991473329367,492
+IML-ViT (zero-shot),a_vs_b,endoscopy,0.5081189187473215,502
+IML-ViT (zero-shot),a_vs_b,histopathology,0.49386677708193155,278
+IML-ViT (zero-shot),a_vs_b,mri,0.5022386652841927,412
+IML-ViT (zero-shot),a_vs_b,ultrasound,0.49929235012338513,332
+IML-ViT (zero-shot),a_vs_b,xray,0.4996332338989682,286
+MVSS-Net (zero-shot),a_vs_c,ALL,0.50499708929671,1618
+MVSS-Net (zero-shot),a_vs_c,ct,0.5045420394781778,242
+MVSS-Net (zero-shot),a_vs_c,endoscopy,0.5048309178743962,276
+MVSS-Net (zero-shot),a_vs_c,histopathology,0.48348946741887067,278
+MVSS-Net (zero-shot),a_vs_c,mri,0.5057919358431722,268
+MVSS-Net (zero-shot),a_vs_c,ultrasound,0.5180441078191134,268
+MVSS-Net (zero-shot),a_vs_c,xray,0.5314440803951294,286
+MVSS-Net (zero-shot),b_vs_c,ALL,0.507220988844596,1618
+MVSS-Net (zero-shot),b_vs_c,ct,0.5041322314049587,242
+MVSS-Net (zero-shot),b_vs_c,endoscopy,0.5077189666036547,276
+MVSS-Net (zero-shot),b_vs_c,histopathology,0.5002846643548471,278
+MVSS-Net (zero-shot),b_vs_c,mri,0.5090220539095567,268
+MVSS-Net (zero-shot),b_vs_c,ultrasound,0.5097460458899532,268
+MVSS-Net (zero-shot),b_vs_c,xray,0.5318108464961612,286
+MVSS-Net (zero-shot),b_vs_d,ALL,0.508092233507746,684
+MVSS-Net (zero-shot),b_vs_d,ct,0.506976,250
+MVSS-Net (zero-shot),b_vs_d,endoscopy,0.49220769050043073,226
+MVSS-Net (zero-shot),b_vs_d,histopathology,,0
+MVSS-Net (zero-shot),b_vs_d,mri,0.5515046296296297,144
+MVSS-Net (zero-shot),b_vs_d,ultrasound,0.4375,64
+MVSS-Net (zero-shot),b_vs_d,xray,,0
+MVSS-Net (zero-shot),a_vs_cm,ALL,0.5173025986544394,2302
+MVSS-Net (zero-shot),a_vs_cm,ct,0.5864234252098619,492
+MVSS-Net (zero-shot),a_vs_cm,endoscopy,0.5012618847319884,502
+MVSS-Net (zero-shot),a_vs_cm,histopathology,0.47932301640701824,278
+MVSS-Net (zero-shot),a_vs_cm,mri,0.49481572249976435,412
+MVSS-Net (zero-shot),a_vs_cm,ultrasound,0.5189069531136594,332
+MVSS-Net (zero-shot),a_vs_cm,xray,0.5563841752652942,286
+MVSS-Net (zero-shot),a_vs_b,ALL,0.4993191430260092,2302
+MVSS-Net (zero-shot),a_vs_b,ct,0.5000330491109789,492
+MVSS-Net (zero-shot),a_vs_b,endoscopy,0.49602387263694225,502
+MVSS-Net (zero-shot),a_vs_b,histopathology,0.4843952176388386,278
+MVSS-Net (zero-shot),a_vs_b,mri,0.5038057309831275,412
+MVSS-Net (zero-shot),a_vs_b,ultrasound,0.5195964581216432,332
+MVSS-Net (zero-shot),a_vs_b,xray,0.4993887231649469,286
+PSCC-Net (zero-shot),a_vs_c,ALL,0.5055624227441285,1618
+PSCC-Net (zero-shot),a_vs_c,ct,0.5,242
+PSCC-Net (zero-shot),a_vs_c,endoscopy,0.5036231884057971,276
+PSCC-Net (zero-shot),a_vs_c,histopathology,0.5143884892086331,278
+PSCC-Net (zero-shot),a_vs_c,mri,0.4962686567164179,268
+PSCC-Net (zero-shot),a_vs_c,ultrasound,0.5074626865671642,268
+PSCC-Net (zero-shot),a_vs_c,xray,0.5104895104895105,286
+PSCC-Net (zero-shot),b_vs_c,ALL,0.5086526576019778,1618
+PSCC-Net (zero-shot),b_vs_c,ct,0.5,242
+PSCC-Net (zero-shot),b_vs_c,endoscopy,0.5036231884057971,276
+PSCC-Net (zero-shot),b_vs_c,histopathology,0.5323741007194245,278
+PSCC-Net (zero-shot),b_vs_c,mri,0.4962686567164179,268
+PSCC-Net (zero-shot),b_vs_c,ultrasound,0.5074626865671642,268
+PSCC-Net (zero-shot),b_vs_c,xray,0.5104895104895105,286
+PSCC-Net (zero-shot),b_vs_d,ALL,0.5014619883040936,684
+PSCC-Net (zero-shot),b_vs_d,ct,0.5,250
+PSCC-Net (zero-shot),b_vs_d,endoscopy,0.5088495575221239,226
+PSCC-Net (zero-shot),b_vs_d,histopathology,,0
+PSCC-Net (zero-shot),b_vs_d,mri,0.4930555555555556,144
+PSCC-Net (zero-shot),b_vs_d,ultrasound,0.5,64
+PSCC-Net (zero-shot),b_vs_d,xray,,0
+PSCC-Net (zero-shot),a_vs_cm,ALL,0.5013032145960035,2302
+PSCC-Net (zero-shot),a_vs_cm,ct,0.5,492
+PSCC-Net (zero-shot),a_vs_cm,endoscopy,0.4940239043824701,502
+PSCC-Net (zero-shot),a_vs_cm,histopathology,0.5143884892086331,278
+PSCC-Net (zero-shot),a_vs_cm,mri,0.49029126213592233,412
+PSCC-Net (zero-shot),a_vs_cm,ultrasound,0.5120481927710844,332
+PSCC-Net (zero-shot),a_vs_cm,xray,0.506993006993007,286
+PSCC-Net (zero-shot),a_vs_b,ALL,0.498262380538662,2302
+PSCC-Net (zero-shot),a_vs_b,ct,0.5,492
+PSCC-Net (zero-shot),a_vs_b,endoscopy,0.5,502
+PSCC-Net (zero-shot),a_vs_b,histopathology,0.48201438848920863,278
+PSCC-Net (zero-shot),a_vs_b,mri,0.4975728155339806,412
+PSCC-Net (zero-shot),a_vs_b,ultrasound,0.5060240963855421,332
+PSCC-Net (zero-shot),a_vs_b,xray,0.5,286
+IML-ViT (standard),a_vs_c,ALL,0.97790004599064,1618
+IML-ViT (standard),a_vs_c,ct,0.6840379755481183,242
+IML-ViT (standard),a_vs_c,endoscopy,0.9946964923335434,276
+IML-ViT (standard),a_vs_c,histopathology,1.0,278
+IML-ViT (standard),a_vs_c,mri,0.9925930051236356,268
+IML-ViT (standard),a_vs_c,ultrasound,1.0,268
+IML-ViT (standard),a_vs_c,xray,0.9547655142060737,286
+IML-ViT (standard),b_vs_c,ALL,0.5208248978961956,1618
+IML-ViT (standard),b_vs_c,ct,0.5319991803838535,242
+IML-ViT (standard),b_vs_c,endoscopy,0.5035706784289015,276
+IML-ViT (standard),b_vs_c,histopathology,0.482040267066922,278
+IML-ViT (standard),b_vs_c,mri,0.5975439964357318,268
+IML-ViT (standard),b_vs_c,ultrasound,0.5282635330808644,268
+IML-ViT (standard),b_vs_c,xray,0.5226172428969632,286
+IML-ViT (standard),b_vs_d,ALL,0.5493014944769331,684
+IML-ViT (standard),b_vs_d,ct,0.564736,250
+IML-ViT (standard),b_vs_d,endoscopy,0.5986373247709296,226
+IML-ViT (standard),b_vs_d,histopathology,,0
+IML-ViT (standard),b_vs_d,mri,0.6157407407407407,144
+IML-ViT (standard),b_vs_d,ultrasound,0.35888671875,64
+IML-ViT (standard),b_vs_d,xray,,0
+IML-ViT (standard),a_vs_cm,ALL,0.6585577758470895,2302
+IML-ViT (standard),a_vs_cm,ct,0.519945138475775,492
+IML-ViT (standard),a_vs_cm,endoscopy,0.6255614990238251,502
+IML-ViT (standard),a_vs_cm,histopathology,0.6174628642409813,278
+IML-ViT (standard),a_vs_cm,mri,0.9450702233952305,412
+IML-ViT (standard),a_vs_cm,ultrasound,0.4985121207722456,332
+IML-ViT (standard),a_vs_cm,xray,0.5290723262751235,286
+IML-ViT (standard),a_vs_b,ALL,0.9387711814831058,2302
+IML-ViT (standard),a_vs_b,ct,0.5814164848965563,492
+IML-ViT (standard),a_vs_b,endoscopy,0.8883668513198203,502
+IML-ViT (standard),a_vs_b,histopathology,1.0,278
+IML-ViT (standard),a_vs_b,mri,0.9950278065793194,412
+IML-ViT (standard),a_vs_b,ultrasound,0.9999637102627377,332
+IML-ViT (standard),a_vs_b,xray,0.9412196195412978,286
+TruFor (standard),a_vs_c,ALL,0.6883461857563474,1618
+TruFor (standard),a_vs_c,ct,0.5175875964756506,242
+TruFor (standard),a_vs_c,endoscopy,0.6931316950220542,276
+TruFor (standard),a_vs_c,histopathology,0.8738160550696134,278
+TruFor (standard),a_vs_c,mri,0.7872577411450211,268
+TruFor (standard),a_vs_c,ultrasound,0.8637224326130541,268
+TruFor (standard),a_vs_c,xray,0.6116191500806886,286
+TruFor (standard),b_vs_c,ALL,0.5202183103863978,1618
+TruFor (standard),b_vs_c,ct,0.5155385561095553,242
+TruFor (standard),b_vs_c,endoscopy,0.5302720016803193,276
+TruFor (standard),b_vs_c,histopathology,0.3879457585011128,278
+TruFor (standard),b_vs_c,mri,0.5862664290487859,268
+TruFor (standard),b_vs_c,ultrasound,0.5747382490532412,268
+TruFor (standard),b_vs_c,xray,0.5380214191403002,286
+TruFor (standard),b_vs_d,ALL,0.521758831777299,684
+TruFor (standard),b_vs_d,ct,0.514624,250
+TruFor (standard),b_vs_d,endoscopy,0.5395097501762081,226
+TruFor (standard),b_vs_d,histopathology,,0
+TruFor (standard),b_vs_d,mri,0.5353009259259259,144
+TruFor (standard),b_vs_d,ultrasound,0.5732421875,64
+TruFor (standard),b_vs_d,xray,,0
+TruFor (standard),a_vs_cm,ALL,0.623595543783557,2302
+TruFor (standard),a_vs_cm,ct,0.7152653843611607,492
+TruFor (standard),a_vs_cm,endoscopy,0.5680862208536372,502
+TruFor (standard),a_vs_cm,histopathology,0.6390973552093577,278
+TruFor (standard),a_vs_cm,mri,0.6388208125176736,412
+TruFor (standard),a_vs_cm,ultrasound,0.5620191609812745,332
+TruFor (standard),a_vs_cm,xray,0.6684923468140251,286
+TruFor (standard),a_vs_b,ALL,0.6279826177667438,2302
+TruFor (standard),a_vs_b,ct,0.5123107938396457,492
+TruFor (standard),a_vs_b,endoscopy,0.6026412279170172,502
+TruFor (standard),a_vs_b,histopathology,0.9257284819626314,278
+TruFor (standard),a_vs_b,mri,0.7224290696578377,412
+TruFor (standard),a_vs_b,ultrasound,0.8200754826535056,332
+TruFor (standard),a_vs_b,xray,0.572937551958531,286
+MVSS-Net (standard),a_vs_c,ALL,0.7209521743182766,1618
+MVSS-Net (standard),a_vs_c,ct,0.5092548323201967,242
+MVSS-Net (standard),a_vs_c,endoscopy,0.552667506826297,276
+MVSS-Net (standard),a_vs_c,histopathology,0.8125873401997826,278
+MVSS-Net (standard),a_vs_c,mri,0.8099242593005124,268
+MVSS-Net (standard),a_vs_c,ultrasound,0.9975495656048118,268
+MVSS-Net (standard),a_vs_c,xray,0.8253215316152379,286
+MVSS-Net (standard),b_vs_c,ALL,0.5389209159624191,1618
+MVSS-Net (standard),b_vs_c,ct,0.5090499282835872,242
+MVSS-Net (standard),b_vs_c,endoscopy,0.5245746691871456,276
+MVSS-Net (standard),b_vs_c,histopathology,0.6120801200766006,278
+MVSS-Net (standard),b_vs_c,mri,0.5856816662953888,268
+MVSS-Net (standard),b_vs_c,ultrasound,0.6283971931387837,268
+MVSS-Net (standard),b_vs_c,xray,0.5806640911536016,286
+MVSS-Net (standard),b_vs_d,ALL,0.5343524503265962,684
+MVSS-Net (standard),b_vs_d,ct,0.513984,250
+MVSS-Net (standard),b_vs_d,endoscopy,0.529407157960686,226
+MVSS-Net (standard),b_vs_d,histopathology,,0
+MVSS-Net (standard),b_vs_d,mri,0.6064814814814815,144
+MVSS-Net (standard),b_vs_d,ultrasound,0.837890625,64
+MVSS-Net (standard),b_vs_d,xray,,0
+MVSS-Net (standard),a_vs_cm,ALL,0.5341183317343511,2302
+MVSS-Net (standard),a_vs_cm,ct,0.5627024258047458,492
+MVSS-Net (standard),a_vs_cm,endoscopy,0.5294677862256154,502
+MVSS-Net (standard),a_vs_cm,histopathology,0.5482376688577196,278
+MVSS-Net (standard),a_vs_cm,mri,0.579979262889999,412
+MVSS-Net (standard),a_vs_cm,ultrasound,0.5439287269560168,332
+MVSS-Net (standard),a_vs_cm,xray,0.5614944496063378,286
+MVSS-Net (standard),a_vs_b,ALL,0.6766733267864381,2302
+MVSS-Net (standard),a_vs_b,ct,0.5002643928878313,492
+MVSS-Net (standard),a_vs_b,endoscopy,0.534308979222552,502
+MVSS-Net (standard),a_vs_b,histopathology,0.7325190207546193,278
+MVSS-Net (standard),a_vs_b,mri,0.7885050428881138,412
+MVSS-Net (standard),a_vs_b,ultrasound,0.9833793003338656,332
+MVSS-Net (standard),a_vs_b,xray,0.7551469509511467,286
+Mesorch (standard),a_vs_c,ALL,0.9633343061143104,1618
+Mesorch (standard),a_vs_c,ct,0.657468752134417,242
+Mesorch (standard),a_vs_c,endoscopy,0.9708044528460408,276
+Mesorch (standard),a_vs_c,histopathology,1.0,278
+Mesorch (standard),a_vs_c,mri,0.9945422143016261,268
+Mesorch (standard),a_vs_c,ultrasound,1.0,268
+Mesorch (standard),a_vs_c,xray,0.9935449166218397,286
+Mesorch (standard),b_vs_c,ALL,0.5358711712028309,1618
+Mesorch (standard),b_vs_c,ct,0.5659449491154975,242
+Mesorch (standard),b_vs_c,endoscopy,0.5409052720016804,276
+Mesorch (standard),b_vs_c,histopathology,0.5820092127736659,278
+Mesorch (standard),b_vs_c,mri,0.6051737580752952,268
+Mesorch (standard),b_vs_c,ultrasound,0.5603697928269102,268
+Mesorch (standard),b_vs_c,xray,0.4996576849723703,286
+Mesorch (standard),b_vs_d,ALL,0.5141282787866353,684
+Mesorch (standard),b_vs_d,ct,0.505536,250
+Mesorch (standard),b_vs_d,endoscopy,0.48790038374187483,226
+Mesorch (standard),b_vs_d,histopathology,,0
+Mesorch (standard),b_vs_d,mri,0.5899884259259259,144
+Mesorch (standard),b_vs_d,ultrasound,0.5146484375,64
+Mesorch (standard),b_vs_d,xray,,0
+Mesorch (standard),a_vs_cm,ALL,0.6578512546412632,2302
+Mesorch (standard),a_vs_cm,ct,0.685322889814264,492
+Mesorch (standard),a_vs_cm,endoscopy,0.7175759114934683,502
+Mesorch (standard),a_vs_cm,histopathology,0.5649811086382692,278
+Mesorch (standard),a_vs_cm,mri,0.8217079837873503,412
+Mesorch (standard),a_vs_cm,ultrasound,0.4924880243867034,332
+Mesorch (standard),a_vs_cm,xray,0.5785123966942148,286
+Mesorch (standard),a_vs_b,ALL,0.9293478794173615,2302
+Mesorch (standard),a_vs_b,ct,0.5600006609822196,492
+Mesorch (standard),a_vs_b,endoscopy,0.9753495976254345,502
+Mesorch (standard),a_vs_b,histopathology,1.0,278
+Mesorch (standard),a_vs_b,mri,0.983551701385616,412
+Mesorch (standard),a_vs_b,ultrasound,1.0,332
+Mesorch (standard),a_vs_b,xray,0.9793632940486088,286
+Mesorch + null-twin negatives,a_vs_c,ALL,0.8837460522154196,1618
+Mesorch + null-twin negatives,a_vs_c,ct,0.5951096236595861,242
+Mesorch + null-twin negatives,a_vs_c,endoscopy,0.9169292165511447,276
+Mesorch + null-twin negatives,a_vs_c,histopathology,0.9786242948087573,278
+Mesorch + null-twin negatives,a_vs_c,mri,0.9577856983738027,268
+Mesorch + null-twin negatives,a_vs_c,ultrasound,0.9849632434840722,268
+Mesorch + null-twin negatives,a_vs_c,xray,0.9339821018142697,286
+Mesorch + null-twin negatives,b_vs_c,ALL,0.742750362500974,1618
+Mesorch + null-twin negatives,b_vs_c,ct,0.5673109760262277,242
+Mesorch + null-twin negatives,b_vs_c,endoscopy,0.6855177483721907,276
+Mesorch + null-twin negatives,b_vs_c,histopathology,0.9562652036644066,278
+Mesorch + null-twin negatives,b_vs_c,mri,0.8126531521496992,268
+Mesorch + null-twin negatives,b_vs_c,ultrasound,0.8631655157050568,268
+Mesorch + null-twin negatives,b_vs_c,xray,0.693628050271407,286
+Mesorch + null-twin negatives,b_vs_d,ALL,0.778624192059095,684
+Mesorch + null-twin negatives,b_vs_d,ct,0.52192,250
+Mesorch + null-twin negatives,b_vs_d,endoscopy,0.9888010024277547,226
+Mesorch + null-twin negatives,b_vs_d,histopathology,,0
+Mesorch + null-twin negatives,b_vs_d,mri,0.9494598765432098,144
+Mesorch + null-twin negatives,b_vs_d,ultrasound,0.935546875,64
+Mesorch + null-twin negatives,b_vs_d,xray,,0
+Mesorch + null-twin negatives,a_vs_cm,ALL,0.9312394842697129,2302
+Mesorch + null-twin negatives,a_vs_cm,ct,0.8731079383964572,492
+Mesorch + null-twin negatives,a_vs_cm,endoscopy,0.9755241980286027,502
+Mesorch + null-twin negatives,a_vs_cm,histopathology,0.9610268619636665,278
+Mesorch + null-twin negatives,a_vs_cm,mri,0.9530351588274107,412
+Mesorch + null-twin negatives,a_vs_cm,ultrasound,0.9544563797358108,332
+Mesorch + null-twin negatives,a_vs_cm,xray,0.9248374003618759,286
+Mesorch + null-twin negatives,a_vs_b,ALL,0.7035501935762428,2302
+Mesorch + null-twin negatives,a_vs_b,ct,0.532553374314231,492
+Mesorch + null-twin negatives,a_vs_b,endoscopy,0.6467992571546484,502
+Mesorch + null-twin negatives,a_vs_b,histopathology,0.6363542259717406,278
+Mesorch + null-twin negatives,a_vs_b,mri,0.788929211047224,412
+Mesorch + null-twin negatives,a_vs_b,ultrasound,0.8879010015967485,332
+Mesorch + null-twin negatives,a_vs_b,xray,0.8967186659494352,286
+"Mesorch + null-twin, distilled",a_vs_c,ALL,0.9175270175910378,1618
+"Mesorch + null-twin, distilled",a_vs_c,ct,0.6145072057919541,242
+"Mesorch + null-twin, distilled",a_vs_c,endoscopy,0.9048519218651544,276
+"Mesorch + null-twin, distilled",a_vs_c,histopathology,0.9748460224626054,278
+"Mesorch + null-twin, distilled",a_vs_c,mri,0.9439741590554689,268
+"Mesorch + null-twin, distilled",a_vs_c,ultrasound,0.9813989752728893,268
+"Mesorch + null-twin, distilled",a_vs_c,xray,0.9163773289647416,286
+"Mesorch + null-twin, distilled",b_vs_c,ALL,0.7678863099157959,1618
+"Mesorch + null-twin, distilled",b_vs_c,ct,0.5861621473943037,242
+"Mesorch + null-twin, distilled",b_vs_c,endoscopy,0.6662465868515017,276
+"Mesorch + null-twin, distilled",b_vs_c,histopathology,0.9664096061280472,278
+"Mesorch + null-twin, distilled",b_vs_c,mri,0.8014034306081532,268
+"Mesorch + null-twin, distilled",b_vs_c,ultrasound,0.84166852305636,268
+"Mesorch + null-twin, distilled",b_vs_c,xray,0.6721111056775393,286
+"Mesorch + null-twin, distilled",b_vs_d,ALL,0.8700369344413665,684
+"Mesorch + null-twin, distilled",b_vs_d,ct,0.52192,250
+"Mesorch + null-twin, distilled",b_vs_d,endoscopy,0.9881744850810557,226
+"Mesorch + null-twin, distilled",b_vs_d,histopathology,,0
+"Mesorch + null-twin, distilled",b_vs_d,mri,0.9720293209876543,144
+"Mesorch + null-twin, distilled",b_vs_d,ultrasound,0.9453125,64
+"Mesorch + null-twin, distilled",b_vs_d,xray,,0
+"Mesorch + null-twin, distilled",a_vs_cm,ALL,0.932382297416744,2302
+"Mesorch + null-twin, distilled",a_vs_cm,ct,0.8708936479608699,492
+"Mesorch + null-twin, distilled",a_vs_cm,endoscopy,0.9748734147077031,502
+"Mesorch + null-twin, distilled",a_vs_cm,histopathology,0.9538326173593499,278
+"Mesorch + null-twin, distilled",a_vs_cm,mri,0.9370817230653219,412
+"Mesorch + null-twin, distilled",a_vs_cm,ultrasound,0.9367832776890695,332
+"Mesorch + null-twin, distilled",a_vs_cm,xray,0.9042984987040931,286
+"Mesorch + null-twin, distilled",a_vs_b,ALL,0.6678742694185769,2302
+"Mesorch + null-twin, distilled",a_vs_b,ct,0.5488631105823253,492
+"Mesorch + null-twin, distilled",a_vs_b,endoscopy,0.6024031364581515,502
+"Mesorch + null-twin, distilled",a_vs_b,histopathology,0.44060866414781846,278
+"Mesorch + null-twin, distilled",a_vs_b,mri,0.6871288528607786,412
+"Mesorch + null-twin, distilled",a_vs_b,ultrasound,0.8378211641747714,332
+"Mesorch + null-twin, distilled",a_vs_b,xray,0.8277177368086459,286
+Paired (FC-Siam-diff),a_vs_c,ALL,0.9924581462257881,1618
+Paired (FC-Siam-diff),a_vs_c,ct,0.9559456321289529,242
+Paired (FC-Siam-diff),a_vs_c,endoscopy,0.9996849401386263,276
+Paired (FC-Siam-diff),a_vs_c,histopathology,1.0,278
+Paired (FC-Siam-diff),a_vs_c,mri,1.0,268
+Paired (FC-Siam-diff),a_vs_c,ultrasound,1.0,268
+Paired (FC-Siam-diff),a_vs_c,xray,0.9913443200156487,286
+Paired (FC-Siam-diff),b_vs_c,ALL,0.98395293369861,1618
+Paired (FC-Siam-diff),b_vs_c,ct,0.9268492589304009,242
+Paired (FC-Siam-diff),b_vs_c,endoscopy,0.9886578449905482,276
+Paired (FC-Siam-diff),b_vs_c,histopathology,1.0,278
+Paired (FC-Siam-diff),b_vs_c,mri,1.0,268
+Paired (FC-Siam-diff),b_vs_c,ultrasound,0.9998886166184006,268
+Paired (FC-Siam-diff),b_vs_c,xray,0.9852804538119223,286
+Paired (FC-Siam-diff),b_vs_d,ALL,0.996058616326391,684
+Paired (FC-Siam-diff),b_vs_d,ct,0.991744,250
+Paired (FC-Siam-diff),b_vs_d,endoscopy,1.0,226
+Paired (FC-Siam-diff),b_vs_d,histopathology,,0
+Paired (FC-Siam-diff),b_vs_d,mri,1.0,144
+Paired (FC-Siam-diff),b_vs_d,ultrasound,1.0,64
+Paired (FC-Siam-diff),b_vs_d,xray,,0
+Paired (FC-Siam-diff),a_vs_cm,ALL,0.9882344593640856,2302
+Paired (FC-Siam-diff),a_vs_cm,ct,0.9514343314164849,492
+Paired (FC-Siam-diff),a_vs_cm,endoscopy,1.0,502
+Paired (FC-Siam-diff),a_vs_cm,histopathology,1.0,278
+Paired (FC-Siam-diff),a_vs_cm,mri,1.0,412
+Paired (FC-Siam-diff),a_vs_cm,ultrasound,1.0,332
+Paired (FC-Siam-diff),a_vs_cm,xray,0.990415179226368,286
+Paired (FC-Siam-diff),a_vs_b,ALL,0.49760039432337383,2302
+Paired (FC-Siam-diff),a_vs_b,ct,0.6053605658007799,492
+Paired (FC-Siam-diff),a_vs_b,endoscopy,0.5637370835383565,502
+Paired (FC-Siam-diff),a_vs_b,histopathology,0.40142849748977794,278
+Paired (FC-Siam-diff),a_vs_b,mri,0.3690027335281365,412
+Paired (FC-Siam-diff),a_vs_b,ultrasound,0.4643634780084192,332
+Paired (FC-Siam-diff),a_vs_b,xray,0.4050564819795589,286
+"Paired, null discarded",a_vs_c,ALL,0.8819996302413668,1618
+"Paired, null discarded",a_vs_c,ct,0.5718871661771737,242
+"Paired, null discarded",a_vs_c,endoscopy,0.9290590212140306,276
+"Paired, null discarded",a_vs_c,histopathology,0.9854562393250867,278
+"Paired, null discarded",a_vs_c,mri,0.9753842726665182,268
+"Paired, null discarded",a_vs_c,ultrasound,0.9801180663844954,268
+"Paired, null discarded",a_vs_c,xray,0.9408284023668639,286
+"Paired, null discarded",b_vs_c,ALL,0.7255351950629583,1618
+"Paired, null discarded",b_vs_c,ct,0.5480499965849327,242
+"Paired, null discarded",b_vs_c,endoscopy,0.6776937618147448,276
+"Paired, null discarded",b_vs_c,histopathology,0.9678070493245691,278
+"Paired, null discarded",b_vs_c,mri,0.7839162396970372,268
+"Paired, null discarded",b_vs_c,ultrasound,0.8164958788148808,268
+"Paired, null discarded",b_vs_c,xray,0.6712308670350629,286
+"Paired, null discarded",b_vs_d,ALL,0.7448103690024281,684
+"Paired, null discarded",b_vs_d,ct,0.5184,250
+"Paired, null discarded",b_vs_d,endoscopy,0.9851202130158979,226
+"Paired, null discarded",b_vs_d,histopathology,,0
+"Paired, null discarded",b_vs_d,mri,0.9521604938271605,144
+"Paired, null discarded",b_vs_d,ultrasound,0.8955078125,64
+"Paired, null discarded",b_vs_d,xray,,0
+"Paired, null discarded",a_vs_cm,ALL,0.9232428115618874,2302
+"Paired, null discarded",a_vs_cm,ct,0.8645151695419393,492
+"Paired, null discarded",a_vs_cm,endoscopy,0.9732861383152648,502
+"Paired, null discarded",a_vs_cm,histopathology,0.9593706329900109,278
+"Paired, null discarded",a_vs_cm,mri,0.938943349985861,412
+"Paired, null discarded",a_vs_cm,ultrasound,0.9423356074902017,332
+"Paired, null discarded",a_vs_cm,xray,0.9336886889334441,286
+"Paired, null discarded",a_vs_b,ALL,0.7534550472108641,2302
+"Paired, null discarded",a_vs_b,ct,0.5271994183356468,492
+"Paired, null discarded",a_vs_b,endoscopy,0.7570673481373311,502
+"Paired, null discarded",a_vs_b,histopathology,0.646343356969101,278
+"Paired, null discarded",a_vs_b,mri,0.8779102648694505,412
+"Paired, null discarded",a_vs_b,ultrasound,0.9278560023225432,332
+"Paired, null discarded",a_vs_b,xray,0.8947625800772654,286
